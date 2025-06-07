@@ -390,10 +390,15 @@
 .prose a {
   color: #0066cc;
   text-decoration: underline;
+  transition: color 0.2s ease;
 }
 
 .prose a:hover {
   color: #004499;
+}
+
+.prose a:active {
+  color: #003366;
 }
 
 .prose ul {
@@ -446,5 +451,9 @@
   
   .prose a:hover {
     color: #4da6ff;
+  }
+  
+  .prose a:active {
+    color: #3399ff;
   }
 }
