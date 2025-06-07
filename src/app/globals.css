@@ -1,0 +1,450 @@
+@import "tailwindcss";
+
+/* CSS Custom Properties for theming */
+:root {
+  --color-blog-primary: 25 39 52; /* #192734 */
+  --color-blog-secondary: 23 37 84; /* rgba(23, 37, 84, 0.8) */
+  --color-blog-muted: 23 37 84; /* rgba(23, 37, 84, 0.5) */
+  --color-blog-accent: 87 142 230; /* #578ee6 */
+  --color-blog-accent-hover: 69 120 212; /* #4578d4 */
+  --color-blog-border: 229 231 235; /* #e5e7eb */
+  --color-blog-bg: 255 255 255; /* #ffffff */
+  --font-blog: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.dark {
+  --color-blog-primary: 255 255 255; /* #ffffff */
+  --color-blog-secondary: 255 255 255; /* rgba(255, 255, 255, 0.8) */
+  --color-blog-muted: 255 255 255; /* rgba(255, 255, 255, 0.5) */
+  --color-blog-accent: 123 167 247; /* #7ba7f7 */
+  --color-blog-accent-hover: 107 154 245; /* #6b9af5 */
+  --color-blog-border: 55 65 81; /* #374151 */
+  --color-blog-bg: 17 24 39; /* #111827 */
+}
+
+/* Profile image styling for About page */
+.profile-container .profile-image {
+  width: 200px;
+  max-width: 20vw;
+  float: right;
+  border-radius: 50%;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+  margin-left: 20px;
+  margin-bottom: 10px;
+  height: auto;
+}
+
+.dark .profile-container .profile-image {
+  box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Typography styles are now handled by Tailwind config */
+.prose {
+  color: rgba(var(--color-blog-secondary), 0.8);
+  font-family: var(--font-blog);
+}
+
+.prose p {
+  color: rgba(var(--color-blog-secondary), 0.8);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: rgb(var(--color-blog-primary));
+  font-family: var(--font-blog);
+}
+
+.prose a {
+  color: rgb(var(--color-blog-accent));
+  text-decoration-color: rgb(var(--color-blog-accent));
+}
+
+.prose a:hover {
+  color: rgb(var(--color-blog-accent-hover));
+  text-decoration-color: rgb(var(--color-blog-accent-hover));
+}
+
+.prose strong {
+  color: rgb(var(--color-blog-primary));
+}
+
+/* Dark mode code blocks */
+@media (prefers-color-scheme: dark) {
+  .prose code {
+    color: #fbbf24;
+    background-color: rgba(55, 65, 81, 0.8);
+  }
+
+  .prose pre {
+    background-color: #1f2937;
+    border-color: #374151;
+  }
+
+  .prose pre code {
+    color: #e5e7eb;
+    background-color: transparent;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-subst {
+    color: #60a5fa !important;
+    font-weight: bold;
+  }
+}
+
+/* Highlight.js theme for syntax highlighting */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+  background: #f8f8f8;
+  color: #333;
+  border-radius: 8px;
+  font-size: 0.875em;
+  line-height: 1.4;
+}
+
+.dark .hljs {
+  background: rgba(55, 65, 81, 0.8);
+  color: #e5e7eb;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.dark .hljs-comment,
+.dark .hljs-quote {
+  color: #9ca3af;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-subst {
+  color: #60a5fa;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.dark .hljs-number,
+.dark .hljs-literal,
+.dark .hljs-variable,
+.dark .hljs-template-variable,
+.dark .hljs-tag .hljs-attr {
+  color: #34d399;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.dark .hljs-string,
+.dark .hljs-doctag {
+  color: #fbbf24;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.dark .hljs-title,
+.dark .hljs-section,
+.dark .hljs-selector-id {
+  color: #f87171;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.dark .hljs-type,
+.dark .hljs-class .hljs-title {
+  color: #a78bfa;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.dark .hljs-tag,
+.dark .hljs-name,
+.dark .hljs-attribute {
+  color: #60a5fa;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.dark .hljs-regexp,
+.dark .hljs-link {
+  color: #10b981;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.dark .hljs-symbol,
+.dark .hljs-bullet {
+  color: #ec4899;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.dark .hljs-built_in,
+.dark .hljs-builtin-name {
+  color: #06b6d4;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.dark .hljs-meta {
+  color: #9ca3af;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.dark .hljs-deletion {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.dark .hljs-addition {
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+/* System dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(17 24 39);
+    color: rgb(255 255 255);
+  }
+  
+  header {
+    background-color: rgb(17 24 39);
+    border-color: rgb(75 85 99);
+  }
+  
+  .bg-white {
+    background-color: rgb(17 24 39);
+  }
+  
+  .text-gray-900 {
+    color: rgb(255 255 255);
+  }
+  
+  .text-gray-600 {
+    color: rgb(209 213 219);
+  }
+  
+  .text-gray-700 {
+    color: rgb(209 213 219);
+  }
+  
+  .text-gray-500 {
+    color: rgb(156 163 175);
+  }
+  
+  .border-gray-200 {
+    border-color: rgb(75 85 99);
+  }
+}
+
+/* Custom typography utilities to match production exactly */
+.text-17 {
+  font-size: 17px;
+}
+
+.text-12 {
+  font-size: 12px;
+}
+
+.text-13 {
+  font-size: 13px;
+}
+
+/* Production-matching metadata color */
+.text-metadata {
+  color: #aaa;
+}
+
+@media (prefers-color-scheme: dark) {
+  .text-metadata {
+    color: #999;
+  }
+}
+
+/* About page prose styling overrides */
+.prose {
+  font-family: var(--font-inter), Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: rgb(51, 51, 51);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.prose p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.prose h1 {
+  font-weight: 800;
+  color: rgb(21, 23, 26);
+  font-family: var(--font-inter), Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 36px;
+  line-height: 1.15;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.prose h2 {
+  font-weight: 700;
+  color: rgb(21, 23, 26);
+  font-family: var(--font-inter), Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  line-height: 1.3;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.prose h3 {
+  font-weight: 700;
+  color: rgb(21, 23, 26);
+  font-family: var(--font-inter), Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.4;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.prose h4 {
+  font-weight: 600;
+  color: rgb(21, 23, 26);
+  font-family: var(--font-inter), Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.prose a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #004499;
+}
+
+.prose ul {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.prose ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  list-style-type: decimal;
+}
+
+.prose li {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 17px;
+  line-height: 1.5;
+  display: list-item;
+}
+
+.prose ul ul {
+  list-style-type: circle;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose ul ul ul {
+  list-style-type: square;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose {
+    color: rgb(209, 213, 219);
+  }
+  
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    color: rgb(255, 255, 255);
+  }
+  
+  .prose a {
+    color: #66b3ff;
+  }
+  
+  .prose a:hover {
+    color: #4da6ff;
+  }
+}

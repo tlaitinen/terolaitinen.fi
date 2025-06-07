@@ -1,0 +1,187 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  darkMode: 'media',
+  theme: {
+    extend: {
+      colors: {
+        'blog-primary': '#192734',
+        'blog-secondary': 'rgb(23, 37, 84)',
+        'blog-muted': 'rgb(23, 37, 84)',
+        'blog-accent': '#578ee6',
+        'blog-accent-hover': '#4578d4',
+        'blog-border': '#e5e7eb',
+        'blog-bg': '#ffffff',
+      },
+      fontFamily: {
+        'inter': ['var(--font-inter)', 'Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Helvetica', 'Arial', 'sans-serif'],
+        'blog': ['var(--font-inter)', 'Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Helvetica', 'Arial', 'sans-serif'],
+      },
+      fontSize: {
+        'blog-xs': ['0.75rem', { lineHeight: '1', letterSpacing: '0.5px' }],
+        'blog-sm': ['0.875rem', { lineHeight: '1.5' }],
+        'blog-base': ['1rem', { lineHeight: '1.65' }],
+        'blog-lg': ['1.125rem', { lineHeight: '1.65' }],
+        'blog-xl': ['1.25rem', { lineHeight: '1.4' }],
+        'blog-2xl': ['1.75rem', { lineHeight: '1.3' }],
+        'blog-3xl': ['3rem', { lineHeight: '1.15' }],
+      },
+      fontWeight: {
+        'blog-normal': '400',
+        'blog-medium': '500',
+        'blog-semibold': '600',
+        'blog-bold': '700',
+      },
+      spacing: {
+        'blog-xs': '0.5rem',
+        'blog-sm': '0.75rem',
+        'blog-md': '1rem',
+        'blog-lg': '1.5rem',
+        'blog-xl': '2rem',
+        'blog-2xl': '3rem',
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+            color: 'rgb(var(--color-blog-secondary))',
+            fontSize: '1.125rem',
+            lineHeight: '1.65',
+            fontFamily: 'var(--font-blog)',
+            p: {
+              marginTop: '0',
+              marginBottom: '1.5rem',
+              fontSize: '1.125rem',
+              lineHeight: '1.65',
+              color: 'rgb(var(--color-blog-secondary))',
+            },
+            h1: {
+              color: 'rgb(var(--color-blog-primary))',
+              fontWeight: '600',
+              fontSize: '3rem',
+              lineHeight: '1.15',
+              marginTop: '0',
+              marginBottom: '0.75rem',
+              fontFamily: 'var(--font-blog)',
+            },
+            h2: {
+              color: 'rgb(var(--color-blog-primary))',
+              fontWeight: '700',
+              fontSize: '1.875rem',
+              lineHeight: '1.3',
+              marginTop: '3rem',
+              marginBottom: '1.5rem',
+              fontFamily: 'var(--font-blog)',
+            },
+            h3: {
+              color: 'rgb(var(--color-blog-primary))',
+              fontWeight: '700',
+              fontSize: '1.5rem',
+              lineHeight: '1.4',
+              marginTop: '2.5rem',
+              marginBottom: '1rem',
+              fontFamily: 'var(--font-blog)',
+            },
+            a: {
+              color: 'rgb(var(--color-blog-accent))',
+              textDecoration: 'underline',
+              textUnderlineOffset: '2px',
+              textDecorationColor: 'rgb(var(--color-blog-accent))',
+              '&:hover': {
+                color: 'rgb(var(--color-blog-accent-hover))',
+                textDecorationColor: 'rgb(var(--color-blog-accent-hover))',
+              },
+            },
+            strong: {
+              color: 'rgb(var(--color-blog-primary))',
+              fontWeight: '700',
+            },
+            'ul, ol': {
+              marginTop: '1.5rem',
+              marginBottom: '1.5rem',
+              paddingLeft: '1.5rem',
+            },
+            ul: {
+              listStyleType: 'disc',
+            },
+            ol: {
+              listStyleType: 'decimal',
+            },
+            li: {
+              marginTop: '0',
+              marginBottom: '0.5rem',
+              fontSize: '1.125rem',
+              lineHeight: '1.75',
+              display: 'list-item',
+            },
+            'ul ul': {
+              listStyleType: 'circle',
+              marginTop: '0.5rem',
+              marginBottom: '0.5rem',
+            },
+            'ul ul ul': {
+              listStyleType: 'square',
+            },
+            code: {
+              color: '#eb5757',
+              backgroundColor: '#f5f7fa',
+              padding: '0.125rem 0.375rem',
+              borderRadius: '0.25rem',
+              fontSize: '0.9em',
+              fontFamily: '"Monaco", "Menlo", "Ubuntu Mono", "Consolas", "Courier New", monospace',
+              '&::before': {
+                content: '""',
+              },
+              '&::after': {
+                content: '""',
+              },
+            },
+            pre: {
+              backgroundColor: 'rgb(249 250 251)',
+              border: '1px solid rgb(229 231 235)',
+              borderRadius: '0.5rem',
+              padding: '1rem',
+              marginTop: '1.5rem',
+              marginBottom: '1.5rem',
+              overflow: 'auto',
+              code: {
+                backgroundColor: 'transparent',
+                padding: '0',
+                fontSize: 'inherit',
+                fontFamily: 'inherit',
+                color: 'inherit',
+              },
+            },
+            blockquote: {
+              borderLeftWidth: '4px',
+              borderLeftColor: 'rgb(209 213 219)',
+              paddingLeft: '1.5rem',
+              fontStyle: 'italic',
+              color: 'rgb(75 85 99)',
+              marginTop: '1.5rem',
+              marginBottom: '1.5rem',
+            },
+            hr: {
+              borderColor: 'rgb(209 213 219)',
+              marginTop: '2.5rem',
+              marginBottom: '2.5rem',
+            },
+            img: {
+              borderRadius: '0.5rem',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+              marginTop: '2rem',
+              marginBottom: '2rem',
+            },
+          },
+        },
+      },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+}
