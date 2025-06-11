@@ -2,6 +2,14 @@ import { getPostsPage } from '@/lib/posts';
 import PostCard from '@/components/PostCard';
 import Pagination from '@/components/Pagination';
 
+export const metadata = {
+  title: "Tero's blog",
+  description: "Personal blog by Tero Laitinen.",
+  alternates: {
+    canonical: 'https://terolaitinen.fi',
+  },
+};
+
 export default function Home() {
   const pageData = getPostsPage(1, 5); // Show 5 posts per page
 

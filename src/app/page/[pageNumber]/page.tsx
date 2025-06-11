@@ -25,6 +25,9 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: `Page ${page} - Tero's blog`,
     description: `Blog posts page ${page}`,
+    alternates: {
+      canonical: `https://terolaitinen.fi/page/${page}`,
+    },
   };
 }
 
