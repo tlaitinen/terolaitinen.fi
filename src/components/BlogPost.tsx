@@ -1,11 +1,26 @@
 import { markdownToHtml } from '@/lib/markdown';
 import { format } from 'date-fns';
+import MermaidDiagram from './MermaidDiagram';
 
 interface BlogPostProps {
   title: string;
   date: string;
   content: string;
   readingTime: number;
+}
+
+function renderContentWithMermaid(htmlContent: string) {
+  const parts = htmlContent.split(/(<div data-mermaid-chart="[^"]*"><\/div>)/);
+  
+  return parts.map((part, index) => {
+    const mermaidMatch = part.match(/^<div data-mermaid-chart="([^"]*)">/);
+    if (mermaidMatch) {
+      const encodedChart = mermaidMatch[1];
+      const chart = Buffer.from(encodedChart, 'base64').toString('utf-8');
+      return <MermaidDiagram key={index} chart={chart} />;
+    }
+    return <div key={index} dangerouslySetInnerHTML={{ __html: part }} />;
+  });
 }
 
 export default async function BlogPost({ title, date, content, readingTime }: BlogPostProps) {
@@ -24,10 +39,9 @@ export default async function BlogPost({ title, date, content, readingTime }: Bl
           {title}
         </h1>
       </header>
-      <div 
-        className="prose"
-        dangerouslySetInnerHTML={{ __html: htmlContent }} 
-      />
+      <div className="prose">
+        {renderContentWithMermaid(htmlContent)}
+      </div>
     </article>
   );
 }

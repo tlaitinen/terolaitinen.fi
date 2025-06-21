@@ -12,20 +12,31 @@ function generateExcerpt(content: string): string {
   // Remove frontmatter first
   const contentWithoutFrontmatter = content.replace(/^---[\s\S]*?---/, '').trim();
   
+  // Remove mermaid code blocks
+  const contentWithoutMermaid = contentWithoutFrontmatter.replace(/```mermaid[\s\S]*?```/g, '');
+  
   // Split into paragraphs (separated by double newlines)
-  const paragraphs = contentWithoutFrontmatter.split(/\n\s*\n/);
+  const paragraphs = contentWithoutMermaid.split(/\n\s*\n/).filter(p => p.trim().length > 0);
   
   if (paragraphs.length === 0) return '';
   
-  // Get the first paragraph and clean it up
-  const firstParagraph = paragraphs[0]
-    .replace(/#{1,6}\s+/g, '') // Remove headers
-    .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold
-    .replace(/\*(.*?)\*/g, '$1') // Remove italic
-    .replace(/\[(.*?)\]\(.*?\)/g, '$1') // Remove links, keep text
-    .replace(/`(.*?)`/g, '$1') // Remove inline code
-    .replace(/\n+/g, ' ') // Replace newlines with spaces
-    .trim();
+  // Find the first non-empty paragraph that's not just a header
+  let firstParagraph = '';
+  for (const paragraph of paragraphs) {
+    const cleaned = paragraph
+      .replace(/#{1,6}\s+/g, '') // Remove headers
+      .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold
+      .replace(/\*(.*?)\*/g, '$1') // Remove italic
+      .replace(/\[(.*?)\]\(.*?\)/g, '$1') // Remove links, keep text
+      .replace(/`(.*?)`/g, '$1') // Remove inline code
+      .replace(/\n+/g, ' ') // Replace newlines with spaces
+      .trim();
+    
+    if (cleaned.length > 20) { // Only use paragraphs with substantial content
+      firstParagraph = cleaned;
+      break;
+    }
+  }
     
   return firstParagraph;
 }

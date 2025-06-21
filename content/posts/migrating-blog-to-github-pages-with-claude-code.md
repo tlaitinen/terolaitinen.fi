@@ -1,7 +1,7 @@
 ---
 title: "Migrating Blog to GitHub Pages with Claude Code Pro"
 slug: "migrating-blog-to-github-pages-with-claude-code"
-date: "2025-07-30"
+date: "2025-06-11"
 ---
 
 I migrated this website from self-hosted Ghost to GitHub Pages using Claude Code Pro. The process took a few hours.
