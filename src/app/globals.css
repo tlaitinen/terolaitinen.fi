@@ -433,6 +433,10 @@
   list-style-type: square;
 }
 
+.prose pre {
+  margin-bottom: 1.5rem;
+}
+
 @media (prefers-color-scheme: dark) {
   .prose {
     color: rgb(209, 213, 219);
