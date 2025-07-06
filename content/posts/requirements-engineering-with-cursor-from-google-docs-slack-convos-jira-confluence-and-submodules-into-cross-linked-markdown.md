@@ -122,7 +122,7 @@ I can keep the manually written document untouched in a separate read-only conte
 
 After a few iterations and revisions, I can have a long document with some gems and some garbage. I ask it to edit it for logical consistency and readability a few times until it stabilizes. If the document is too long or contains material for multiple audiences, I can interactively explore different ways to split it. When splitting a document, the challenge is how much information to duplicate between documents so that the end result is readable and easily navigable. Some duplication can be acceptable because models can update relevant sections in multiple files when revising requirements. Alternatively, some sections can be canonicalized in a specific document. This approach gives that document an explicit source-of-truth status for a given sub-topic. The model can then be asked to link to this canonical document with an accompanying summary.
 
-Pushing directly to main can be a pragmatic approach in a GitHub repository with little traffic. Alternatively and additionally, pull requests are a pragmatic method for co-authors to suggest their revisions. Pull requests' commenting capabilities can be helpful for aligning on the final format. GitHub's web application's text editor works for quick minor revisions.
+Pushing directly to main can be a straightforward approach in a GitHub repository with little traffic. Alternatively and additionally, pull requests are a pragmatic method for co-authors to suggest their revisions. Pull requests' commenting capabilities can be helpful for aligning on the final format. GitHub's web application's text editor works for quick minor revisions.
 
 ## Back to Confluence and JIRA
 
