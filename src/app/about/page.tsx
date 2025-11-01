@@ -3,7 +3,7 @@ import { getAboutPage } from '@/lib/posts';
 
 export const metadata = {
   title: 'About me - Tero\'s blog',
-  description: 'About Tero Laitinen - Staff Engineer and technical blogger',
+  description: 'Tero Laitinen's personal blog',
   alternates: {
     canonical: 'https://terolaitinen.fi/about',
   },
