@@ -6,7 +6,7 @@ date: "2026-05-06"
 
 ```mermaid
 flowchart LR
-    You["You"] --> Issues["GitHub issues<br/>intent, blockers, approvals"]
+    Human["Human"] --> Issues["GitHub issues<br/>intent, blockers, approvals"]
     Issues --> Tasks["Task files<br/>TOML metadata and acceptance"]
     Tasks --> Driver["Rust driver<br/>pick, lease, invoke, gate"]
     Driver --> Workers["Worker hosts<br/>laptop and desktop"]
@@ -32,7 +32,7 @@ The rest of this document specifies the mechanisms that satisfy these requiremen
 
 2. Maximize hardware utilization.
 
-   The laptop, desktop, and public server have different resource profiles. Local hardware should run work that benefits from local CPU, RAM, disk, datasets, or GPU. The public server should stay small and stable.
+   The two local machines and the public server have different resource profiles. Work routes to whichever host has the required CPU, RAM, disk, datasets, or GPU. The public server should stay small and stable.
 
 3. Support an unreliable worker fleet.
 
@@ -64,26 +64,24 @@ The rest of this document specifies the mechanisms that satisfy these requiremen
 
 10. Keep public operation separate from experimentation.
 
-   The public box serves the app, runs bounded live workloads, receives deploy artifacts, and exposes health checks. It does not run agents.
+    The public box serves the app, runs bounded live workloads, receives deploy artifacts, and exposes health checks. It does not run agents.
 
 11. Improve instructions from observed failures.
 
-   Failures and surprises become typed records, session summaries, follow-up tasks, `AGENTS.md` edits, requirement changes, or safety-rule changes. Instruction changes require my confirmation.
+    Failures and surprises become typed records, session summaries, follow-up tasks, `AGENTS.md` edits, requirement changes, or safety-rule changes. Instruction changes require my confirmation.
 
 ## Topology
 
 ```mermaid
 flowchart LR
-    Laptop["Laptop<br/>interactive orchestration<br/>specs, inspection, short edits"] --> GitHub["GitHub<br/>issues and main branch"]
-    Desktop["Desktop<br/>heavy worker<br/>large tests, builds, experiments"] --> GitHub
+    Laptop["Laptop<br/>worker host"] --> GitHub["GitHub<br/>issues and main branch"]
+    Desktop["Desktop<br/>worker host"] --> GitHub
     GitHub --> PublicBox["Public server<br/>serves app and receives deploy artifacts"]
     Devcontainer["Hardened devcontainer<br/>noninteractive agent runtime"] --> Laptop
     Devcontainer --> Desktop
 ```
 
-The laptop is my machine. It handles interactive orchestration, specification, inspection, short edits, and small checks.
-
-The desktop is the heavy worker. It has CPU, RAM, disk, local datasets, and possibly GPU for long-running experiments, full builds, large tests, and data analysis.
+The laptop and the desktop are both worker hosts. I use whichever one I am at — the laptop when travelling, the desktop at home. Both run agents inside the hardened devcontainer and push commits to `main`. The router assigns tasks based on declared resources and which host is online, not by fixed role.
 
 The public server is a CX22-class VPS. It serves the public app, stores public operational state in SQLite3 and DuckDB, and receives deploy artifacts. It is outside the agent fleet.
 
@@ -532,8 +530,8 @@ Memory limits are part of the product contract. They are not comments.
 flowchart LR
     Task["Task resource needs"] --> Router["Host routing"]
     Telemetry["Prior reports<br/>CPU, RSS, GPU, wall time"] --> Router
-    Router --> Laptop["Laptop<br/>short, interactive, small checks"]
-    Router --> Desktop["Desktop<br/>large builds, tests, experiments"]
+    Router --> Laptop["Laptop<br/>home or travel"]
+    Router --> Desktop["Desktop<br/>home base"]
     Router --> PublicBox["Public server<br/>bounded live workloads only"]
     Desktop --> Reports["Telemetry reports"]
     Reports --> Telemetry
@@ -592,6 +590,8 @@ flowchart LR
 Deployment is explicit and issue-confirmed.
 
 The backend deploy artifact is a Linux server binary. Builds happen in Linux-capable environments: Linux, WSL2, or a macOS-hosted Linux VM.
+
+I do not use GitHub Actions for deployment. The Rust workspace is large enough that a cold build in GitHub Actions timed out at 60 minutes, and the free CI minute budget would not sustain frequent builds. The public server is a small CX22 VPS, so it cannot build the backend itself. Each worker host keeps a warm `target/` cache, which makes building the Linux binary and deploying directly from a host practical.
 
 Frontend artifacts build separately and ship with the backend or as static assets.
 
@@ -687,7 +687,9 @@ Boundary:
 
 The container does not receive the rest of the home directory, unrelated SSH keys, shell history, other projects, production data by default, or broad secret directories.
 
-This is containment, not proof. A YOLO-mode agent with git credentials and network access is still a serious actor.
+This is containment, not proof. A YOLO-mode agent with git credentials and
+network access is still a serious actor. I will revise the security 
+setup if I ever have something worth protecting running in production.
 
 ## Next Steps
 
