@@ -42,6 +42,19 @@ function generateExcerpt(content: string): string {
   return firstParagraph;
 }
 
+export function truncateAtWordBoundary(text: string, maxLength: number): string {
+  if (text.length <= maxLength) return text;
+  
+  // Find the last space within the limit
+  const truncated = text.slice(0, maxLength);
+  const lastSpaceIndex = truncated.lastIndexOf(' ');
+  
+  // If no space found, just truncate at limit (rare for long text)
+  if (lastSpaceIndex === -1) return truncated + '...';
+  
+  return truncated.slice(0, lastSpaceIndex) + '...';
+}
+
 const postsDirectory = path.join(process.cwd(), 'content/posts');
 
 export interface Post {
@@ -149,6 +162,32 @@ export function getPostsByTag(slug: string): Post[] {
   return getAllPosts().filter((post) =>
     post.tags.some((tag) => tagToSlug(tag) === normalizedSlug)
   );
+}
+
+export function getRelatedPosts(slug: string, limit: number = 3): Post[] {
+  const targetPost = getPostBySlug(slug);
+  if (!targetPost) return [];
+
+  const allPosts = getAllPosts();
+  const targetTagSlugs = new Set(targetPost.tags.map(tagToSlug));
+
+  // Score posts by shared tags
+  const scored = allPosts
+    .filter((post) => post.slug !== slug)
+    .map((post) => {
+      const sharedTags = post.tags.filter((tag) => targetTagSlugs.has(tagToSlug(tag))).length;
+      return { post, score: sharedTags };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      // Tie-break by recency
+      return new Date(b.post.date).getTime() - new Date(a.post.date).getTime();
+    })
+    .slice(0, limit)
+    .map((item) => item.post);
+
+  return scored;
 }
 
 export function getAboutPage() {

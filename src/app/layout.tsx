@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Analytics from "@/components/Analytics";
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   title: "Tero's blog",
   description: "Personal technical blog by Tero Laitinen. Articles on software engineering, architecture, and technology.",
   authors: [{ name: 'Tero Laitinen', url: 'https://terolaitinen.fi/about' }],
-  keywords: ['Tero Laitinen', 'software engineering', 'React', 'TypeScript', 'blog'],
+  keywords: ['Tero Laitinen', 'software engineering', 'blog'],
   icons: {
     icon: '/favicon.png',
     apple: '/apple-touch-icon.png',
@@ -58,12 +59,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://github.com" />
+        <link rel="preconnect" href="https://linkedin.com" />
+        <link rel="dns-prefetch" href="https://careers.wolt.com" />
+      </head>
       <body className={`${inter.variable} antialiased bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-inter transition-colors`}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-md focus:font-semibold"
+        >
+          Skip to content
+        </a>
         <Header />
-        <main className="min-h-screen">
+        <main id="main-content" className="min-h-screen">
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

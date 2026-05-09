@@ -350,14 +350,14 @@
   font-size: 13px;
 }
 
-/* Production-matching metadata color */
+/* Production-matching metadata color - WCAG AA compliant (4.6:1 on white, 4.5:1 on dark) */
 .text-metadata {
-  color: #aaa;
+  color: #757575;
 }
 
 @media (prefers-color-scheme: dark) {
   .text-metadata {
-    color: #999;
+    color: #a3a3a3;
   }
 }
 

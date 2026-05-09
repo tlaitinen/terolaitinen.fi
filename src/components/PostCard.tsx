@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { format } from 'date-fns';
+import { truncateAtWordBoundary } from '@/lib/posts';
 
 interface PostCardProps {
   title: string;
@@ -15,7 +16,7 @@ export default function PostCard({ title, slug, date, excerpt, readingTime }: Po
   return (
     <article className="pb-6 mb-6">
       <div className="flex items-center gap-2 text-12 mb-3 text-metadata font-bold tracking-wide">
-        <time>{formattedDate}</time>
+        <time dateTime={date}>{formattedDate}</time>
         <span>•</span>
         <span>{readingTime} MIN READ</span>
       </div>
@@ -29,7 +30,7 @@ export default function PostCard({ title, slug, date, excerpt, readingTime }: Po
       </h2>
       {excerpt && (
         <p className="text-17 text-gray-700 dark:text-gray-300 font-blog mb-0 leading-normal">
-          {excerpt.length > 150 ? `${excerpt.substring(0, 150)}...` : excerpt}
+          {excerpt ? truncateAtWordBoundary(excerpt, 150) : ''}
         </p>
       )}
     </article>

@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getAllPosts } from '@/lib/posts';
 import BlogPost from '@/components/BlogPost';
+import RelatedPosts from '@/components/RelatedPosts';
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
@@ -102,6 +103,7 @@ export default async function PostPage({ params }: PostPageProps) {
         content={post.content}
         readingTime={post.readingTime}
       />
+      <RelatedPosts currentSlug={slug} />
     </>
   );
 }

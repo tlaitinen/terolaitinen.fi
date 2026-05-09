@@ -19,5 +19,17 @@ export async function markdownToHtml(markdown: string): Promise<string> {
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(processedMarkdown);
   
-  return result.toString();
+  let html = result.toString();
+
+  // Add loading="lazy" to images for performance
+  html = html.replace(
+    /<img([^>]*)>/g,
+    (match, attrs) => {
+      // Skip if already has loading attribute
+      if (/\sloading=/.test(attrs)) return match;
+      return `<img${attrs} loading="lazy">`;
+    }
+  );
+
+  return html;
 }

@@ -33,7 +33,7 @@ export default async function BlogPost({ title, date, tags, content, readingTime
     <article className="max-w-3xl mx-auto px-6 py-8">
       <header className="mb-10 text-center">
         <div className="flex items-center justify-center gap-2 text-12 mb-6 text-metadata font-bold tracking-wide">
-          <time>{formattedDate}</time>
+          <time dateTime={date}>{formattedDate}</time>
           <span>•</span>
           <span>{readingTime} MIN READ</span>
         </div>
