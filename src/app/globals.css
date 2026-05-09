@@ -72,6 +72,33 @@
   color: rgb(var(--color-blog-primary));
 }
 
+.prose .measurement-table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.prose .measurement-table th,
+.prose .measurement-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid rgb(var(--color-blog-border));
+  vertical-align: top;
+}
+
+.prose .measurement-table th {
+  color: rgb(var(--color-blog-primary));
+  font-weight: 700;
+  text-align: left;
+}
+
+.prose .measurement-table th:last-child,
+.prose .measurement-table td:last-child {
+  text-align: right;
+  white-space: nowrap;
+}
+
 /* Dark mode code blocks */
 @media (prefers-color-scheme: dark) {
   .prose code {

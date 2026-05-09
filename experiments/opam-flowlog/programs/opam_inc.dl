@@ -1,0 +1,31 @@
+.decl DepClause(pid: int32, cid: int32)
+.input DepClause(IO="command", delimiter=",")
+
+.decl Candidate(pid: int32, cid: int32, qid: int32)
+.input Candidate(IO="command", delimiter=",")
+
+.decl Conflict(pid: int32, qid: int32)
+.input Conflict(IO="command", delimiter=",")
+
+.decl SatisfiedClause(pid: int32, cid: int32)
+SatisfiedClause(pid, cid) :- DepClause(pid, cid), Candidate(pid, cid, _).
+
+.decl MissingDependency(pid: int32, cid: int32)
+MissingDependency(pid, cid) :- DepClause(pid, cid), !SatisfiedClause(pid, cid).
+
+.decl NonConflictingClause(pid: int32, cid: int32)
+NonConflictingClause(pid, cid) :-
+  Candidate(pid, cid, qid),
+  !Conflict(pid, qid),
+  !Conflict(qid, pid).
+
+.decl SelfBlockedDependency(pid: int32, cid: int32)
+SelfBlockedDependency(pid, cid) :-
+  DepClause(pid, cid),
+  Candidate(pid, cid, _),
+  !NonConflictingClause(pid, cid).
+
+.decl Violation(kind: int32, pid: int32, cid: int32)
+Violation(1, pid, cid) :- MissingDependency(pid, cid).
+Violation(2, pid, cid) :- SelfBlockedDependency(pid, cid).
+.output Violation

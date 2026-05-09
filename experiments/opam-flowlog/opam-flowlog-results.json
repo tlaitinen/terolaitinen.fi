@@ -1,0 +1,802 @@
+{
+  "summary": {
+    "engine": "FlowLog",
+    "flowlog_version": "flowlog-compiler-v0.3.0",
+    "workers": 1,
+    "commits": 30,
+    "updates": 29,
+    "first_commit": "0d8fa4e2785bb4702bdbdbce972aecc1bbf211fb",
+    "last_commit": "9ed793693353d2181d75bf67c93fae35613649a4",
+    "batch_ms_p50": 783.599,
+    "batch_ms_p90": 803.795,
+    "incremental_commit_ms_p50": 0.89,
+    "incremental_commit_ms_p90": 1.742,
+    "incremental_commit_ms_max": 8.327,
+    "speedup_p50": 895.5228310502282,
+    "speedup_p90": 1423.08228980322,
+    "input_delta_abs_p50": 109,
+    "input_delta_abs_p90": 381,
+    "input_delta_abs_max": 2115,
+    "incremental_total_wall_ms": 2602.51,
+    "incremental_max_rss_mb": 503.984,
+    "batch_max_rss_mb_max": 152.094,
+    "validation": "Each incremental Violation snapshot matched FlowLog batch output for the same commit.",
+    "model_notes": "Single abstract environment; available/depext filters are not evaluated; version formulas are approximated by quoted version atoms; OPAM solver installability is not modeled."
+  },
+  "commits": [
+    {
+      "commit": "0d8fa4e2785bb4702bdbdbce972aecc1bbf211fb",
+      "short": "0d8fa4e2785b",
+      "changed_opam_paths": []
+    },
+    {
+      "commit": "94c943996066236b7203cad4027522be61e33f45",
+      "short": "94c943996066",
+      "changed_opam_paths": [
+        "packages/smtml/smtml.0.26.0/opam"
+      ]
+    },
+    {
+      "commit": "8f80abeb7b22618a68adbe4730a57d5573c4f353",
+      "short": "8f80abeb7b22",
+      "changed_opam_paths": [
+        "packages/caqti-miou/caqti-miou.2.3.1/opam"
+      ]
+    },
+    {
+      "commit": "dd592986d47d277a9eee2bf37e1c4aa3a0c3efbd",
+      "short": "dd592986d47d",
+      "changed_opam_paths": [
+        "packages/lwt/lwt.6.1.2/opam"
+      ]
+    },
+    {
+      "commit": "24c3efe52d0b736596aedf7facc049389fbda2b6",
+      "short": "24c3efe52d0b",
+      "changed_opam_paths": [
+        "packages/hdr_histogram/hdr_histogram.0.0.5/opam"
+      ]
+    },
+    {
+      "commit": "d1c56642b8ca7e1166c90bfe0c74f38007bbad58",
+      "short": "d1c56642b8ca",
+      "changed_opam_paths": [
+        "packages/core/core.v0.17.1/opam"
+      ]
+    },
+    {
+      "commit": "b07e25ba4a95f8c8ff6f0e20cd4a7eadefbbc358",
+      "short": "b07e25ba4a95",
+      "changed_opam_paths": [
+        "packages/oxcaml/oxcaml.action-required/opam"
+      ]
+    },
+    {
+      "commit": "29b41dcbd8255bb07c4b10de47da58747715822b",
+      "short": "29b41dcbd825",
+      "changed_opam_paths": [
+        "packages/anders/anders.5.0.0/opam"
+      ]
+    },
+    {
+      "commit": "6eba819fc9cf11948f2ec0ccb35df7352e130ee2",
+      "short": "6eba819fc9cf",
+      "changed_opam_paths": [
+        "packages/ip2proxy/ip2proxy.3.2.0/opam"
+      ]
+    },
+    {
+      "commit": "e97fe509690603ed4fa2244f8b51881594bdb6cf",
+      "short": "e97fe5096906",
+      "changed_opam_paths": [
+        "packages/nats-client-async/nats-client-async.0.0.10/opam",
+        "packages/nats-client/nats-client.0.0.10/opam"
+      ]
+    },
+    {
+      "commit": "759cc913688f1c5cf05b9ec5d5ba644683bf7393",
+      "short": "759cc913688f",
+      "changed_opam_paths": [
+        "packages/arc/arc.0.0.2/opam"
+      ]
+    },
+    {
+      "commit": "ea0080d051e534ee125b6362b65df4543d778fbf",
+      "short": "ea0080d051e5",
+      "changed_opam_paths": [
+        "packages/utcp/utcp.0.0.3/opam"
+      ]
+    },
+    {
+      "commit": "08cd46246bf60574394404db8707a2ea6739d6fd",
+      "short": "08cd46246bf6",
+      "changed_opam_paths": [
+        "packages/brr-lwd/brr-lwd.0.5/opam",
+        "packages/lwd/lwd.0.5/opam",
+        "packages/nottui-lwt/nottui-lwt.0.5/opam",
+        "packages/nottui-pretty/nottui-pretty.0.5/opam",
+        "packages/nottui-unix/nottui-unix.0.5/opam",
+        "packages/nottui/nottui.0.5/opam",
+        "packages/tyxml-lwd/tyxml-lwd.0.5/opam"
+      ]
+    },
+    {
+      "commit": "1e9db12c610aca8309a50e44fb4e11dd463eb8af",
+      "short": "1e9db12c610a",
+      "changed_opam_paths": [
+        "packages/nottui-miou/nottui-miou.0.0.1/opam",
+        "packages/notty-miou/notty-miou.0.0.1/opam"
+      ]
+    },
+    {
+      "commit": "25459587867b0f914c4fc577bd9984837c5a219d",
+      "short": "25459587867b",
+      "changed_opam_paths": [
+        "packages/dot-merlin-reader/dot-merlin-reader.5.7.1-504/opam",
+        "packages/merlin-lib/merlin-lib.5.7.1-504/opam",
+        "packages/merlin/merlin.5.7.1-504/opam",
+        "packages/ocaml-index/ocaml-index.5.7.1-504/opam"
+      ]
+    },
+    {
+      "commit": "76bd899e94da6c4b6bc6b7efa84d0737069db6f0",
+      "short": "76bd899e94da",
+      "changed_opam_paths": [
+        "packages/wol-eio/wol-eio.1.0/opam",
+        "packages/wol-mirage/wol-mirage.1.0/opam",
+        "packages/wol/wol.1.0/opam"
+      ]
+    },
+    {
+      "commit": "f90b1e38d0796fca22a9128ccfbfbd9dde64fcf1",
+      "short": "f90b1e38d079",
+      "changed_opam_paths": [
+        "packages/lem/lem.2026-05-01/opam"
+      ]
+    },
+    {
+      "commit": "3cf2439784d0dd1429bfb64f34bb6db2f576affa",
+      "short": "3cf2439784d0",
+      "changed_opam_paths": [
+        "packages/valkey/valkey.0.3.1/opam"
+      ]
+    },
+    {
+      "commit": "ad878f6a589e2caa50b20387ea5a3e053f5bcd3b",
+      "short": "ad878f6a589e",
+      "changed_opam_paths": [
+        "packages/anders/anders.5.1.0/opam"
+      ]
+    },
+    {
+      "commit": "acfaa9d47bde672c065f83f3b914fba7980faf1d",
+      "short": "acfaa9d47bde",
+      "changed_opam_paths": [
+        "packages/conf-dwarfutils/conf-dwarfutils.1/opam"
+      ]
+    },
+    {
+      "commit": "cb8d11035ca0fe29e1b7cc04544ad24ba7bcad50",
+      "short": "cb8d11035ca0",
+      "changed_opam_paths": [
+        "packages/charset/charset.0.3.0/opam"
+      ]
+    },
+    {
+      "commit": "96458ecf751352fdc37a91528374bf1f5efd2ca7",
+      "short": "96458ecf7513",
+      "changed_opam_paths": [
+        "packages/conf-git-daemon/conf-git-daemon.1.0/opam"
+      ]
+    },
+    {
+      "commit": "6a81fcd7e7fef1d94dab4618cc3da8843b6e464e",
+      "short": "6a81fcd7e7fe",
+      "changed_opam_paths": [
+        "packages/matcha/matcha.0.1.0/opam"
+      ]
+    },
+    {
+      "commit": "7d5cbdbc1151b699e44529b13fd680723b359453",
+      "short": "7d5cbdbc1151",
+      "changed_opam_paths": [
+        "packages/dockerfile-cmd/dockerfile-cmd.8.3.7/opam",
+        "packages/dockerfile-opam/dockerfile-opam.8.3.7/opam",
+        "packages/dockerfile/dockerfile.8.3.7/opam"
+      ]
+    },
+    {
+      "commit": "9226b95ebeaa698593640cb2ab228a9c83970303",
+      "short": "9226b95ebeaa",
+      "changed_opam_paths": [
+        "packages/cohttp-async/cohttp-async.6.1.0/opam",
+        "packages/cohttp-async/cohttp-async.6.2.1/opam"
+      ]
+    },
+    {
+      "commit": "0b65185ca40c6ee382453bc42d0f68c88f08c635",
+      "short": "0b65185ca40c",
+      "changed_opam_paths": [
+        "packages/ez_api/ez_api.2.2.0/opam"
+      ]
+    },
+    {
+      "commit": "ade76687fbc9001333af45d7dd28419a7869b2ae",
+      "short": "ade76687fbc9",
+      "changed_opam_paths": [
+        "packages/bm25/bm25.0.0.1/opam",
+        "packages/stem/stem.0.0.1/opam"
+      ]
+    },
+    {
+      "commit": "eefeb7b6e5064e6c62f2e59551fb29073345d4cd",
+      "short": "eefeb7b6e506",
+      "changed_opam_paths": [
+        "packages/opatch/opatch.3.1.1/opam",
+        "packages/patch/patch.3.1.1/opam"
+      ]
+    },
+    {
+      "commit": "622e2cd03db68197f7299596fa614b2f91aa9260",
+      "short": "622e2cd03db6",
+      "changed_opam_paths": [
+        "packages/dockerfile-cmd/dockerfile-cmd.8.3.8/opam",
+        "packages/dockerfile-opam/dockerfile-opam.8.3.8/opam",
+        "packages/dockerfile/dockerfile.8.3.8/opam"
+      ]
+    },
+    {
+      "commit": "9ed793693353d2181d75bf67c93fae35613649a4",
+      "short": "9ed793693353",
+      "changed_opam_paths": [
+        "packages/ppx_deriving_jsonschema/ppx_deriving_jsonschema.0.0.7/opam"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "index": 0,
+      "commit": "0d8fa4e2785b",
+      "changed_opam_files": 0,
+      "package_versions": 18851,
+      "package_names": 4482,
+      "dep_clause_facts": 137179,
+      "candidate_facts": 1692545,
+      "conflict_facts": 27313,
+      "input_facts": 1857037,
+      "input_delta_abs": 1857037,
+      "violations": 1710,
+      "batch_ms": 1129.91,
+      "batch_max_rss_mb": 151.75,
+      "fact_generation_ms": 8137.246,
+      "incremental_commit_ms": 1891.756,
+      "violation_delta_abs": 1710
+    },
+    {
+      "index": 1,
+      "commit": "94c943996066",
+      "changed_opam_files": 1,
+      "package_versions": 18852,
+      "package_names": 4482,
+      "dep_clause_facts": 137218,
+      "candidate_facts": 1692849,
+      "conflict_facts": 27351,
+      "input_facts": 1857418,
+      "input_delta_abs": 381,
+      "violations": 1711,
+      "batch_ms": 772.212,
+      "batch_max_rss_mb": 152.016,
+      "fact_generation_ms": 7814.458,
+      "incremental_commit_ms": 2.899,
+      "violation_delta_abs": 1
+    },
+    {
+      "index": 2,
+      "commit": "8f80abeb7b22",
+      "changed_opam_files": 1,
+      "package_versions": 18853,
+      "package_names": 4482,
+      "dep_clause_facts": 137228,
+      "candidate_facts": 1692931,
+      "conflict_facts": 27351,
+      "input_facts": 1857510,
+      "input_delta_abs": 92,
+      "violations": 1711,
+      "batch_ms": 889.967,
+      "batch_max_rss_mb": 151.812,
+      "fact_generation_ms": 8056.802,
+      "incremental_commit_ms": 0.89,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 3,
+      "commit": "dd592986d47d",
+      "changed_opam_files": 1,
+      "package_versions": 18854,
+      "package_names": 4482,
+      "dep_clause_facts": 137235,
+      "candidate_facts": 1694999,
+      "conflict_facts": 27391,
+      "input_facts": 1859625,
+      "input_delta_abs": 2115,
+      "violations": 1711,
+      "batch_ms": 775.884,
+      "batch_max_rss_mb": 152.062,
+      "fact_generation_ms": 7919.444,
+      "incremental_commit_ms": 8.327,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 4,
+      "commit": "24c3efe52d0b",
+      "changed_opam_files": 1,
+      "package_versions": 18855,
+      "package_names": 4482,
+      "dep_clause_facts": 137244,
+      "candidate_facts": 1695090,
+      "conflict_facts": 27391,
+      "input_facts": 1859725,
+      "input_delta_abs": 100,
+      "violations": 1711,
+      "batch_ms": 784.965,
+      "batch_max_rss_mb": 152.062,
+      "fact_generation_ms": 7827.848,
+      "incremental_commit_ms": 1.204,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 5,
+      "commit": "d1c56642b8ca",
+      "changed_opam_files": 1,
+      "package_versions": 18855,
+      "package_names": 4482,
+      "dep_clause_facts": 137244,
+      "candidate_facts": 1695088,
+      "conflict_facts": 27391,
+      "input_facts": 1859723,
+      "input_delta_abs": 26,
+      "violations": 1711,
+      "batch_ms": 777.812,
+      "batch_max_rss_mb": 152.031,
+      "fact_generation_ms": 6503.473,
+      "incremental_commit_ms": 0.989,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 6,
+      "commit": "b07e25ba4a95",
+      "changed_opam_files": 1,
+      "package_versions": 18856,
+      "package_names": 4483,
+      "dep_clause_facts": 137244,
+      "candidate_facts": 1695088,
+      "conflict_facts": 27391,
+      "input_facts": 1859723,
+      "input_delta_abs": 0,
+      "violations": 1711,
+      "batch_ms": 774.017,
+      "batch_max_rss_mb": 152.031,
+      "fact_generation_ms": 6125.384,
+      "incremental_commit_ms": 0.158,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 7,
+      "commit": "29b41dcbd825",
+      "changed_opam_files": 1,
+      "package_versions": 18857,
+      "package_names": 4483,
+      "dep_clause_facts": 137248,
+      "candidate_facts": 1695140,
+      "conflict_facts": 27391,
+      "input_facts": 1859779,
+      "input_delta_abs": 56,
+      "violations": 1711,
+      "batch_ms": 803.795,
+      "batch_max_rss_mb": 152.016,
+      "fact_generation_ms": 6130.963,
+      "incremental_commit_ms": 0.737,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 8,
+      "commit": "6eba819fc9cf",
+      "changed_opam_files": 1,
+      "package_versions": 18858,
+      "package_names": 4483,
+      "dep_clause_facts": 137253,
+      "candidate_facts": 1695215,
+      "conflict_facts": 27391,
+      "input_facts": 1859859,
+      "input_delta_abs": 80,
+      "violations": 1711,
+      "batch_ms": 779.686,
+      "batch_max_rss_mb": 152.016,
+      "fact_generation_ms": 6034.914,
+      "incremental_commit_ms": 0.749,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 9,
+      "commit": "e97fe5096906",
+      "changed_opam_files": 2,
+      "package_versions": 18860,
+      "package_names": 4483,
+      "dep_clause_facts": 137266,
+      "candidate_facts": 1695348,
+      "conflict_facts": 27391,
+      "input_facts": 1860005,
+      "input_delta_abs": 146,
+      "violations": 1711,
+      "batch_ms": 784.478,
+      "batch_max_rss_mb": 152.062,
+      "fact_generation_ms": 6086.229,
+      "incremental_commit_ms": 0.876,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 10,
+      "commit": "759cc913688f",
+      "changed_opam_files": 1,
+      "package_versions": 18861,
+      "package_names": 4483,
+      "dep_clause_facts": 137278,
+      "candidate_facts": 1695461,
+      "conflict_facts": 27391,
+      "input_facts": 1860130,
+      "input_delta_abs": 125,
+      "violations": 1711,
+      "batch_ms": 783.599,
+      "batch_max_rss_mb": 152.062,
+      "fact_generation_ms": 6136.783,
+      "incremental_commit_ms": 0.724,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 11,
+      "commit": "ea0080d051e5",
+      "changed_opam_files": 1,
+      "package_versions": 18862,
+      "package_names": 4483,
+      "dep_clause_facts": 137306,
+      "candidate_facts": 1695592,
+      "conflict_facts": 27391,
+      "input_facts": 1860289,
+      "input_delta_abs": 159,
+      "violations": 1711,
+      "batch_ms": 773.328,
+      "batch_max_rss_mb": 152.078,
+      "fact_generation_ms": 6111.222,
+      "incremental_commit_ms": 0.957,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 12,
+      "commit": "08cd46246bf6",
+      "changed_opam_files": 7,
+      "package_versions": 18869,
+      "package_names": 4483,
+      "dep_clause_facts": 137346,
+      "candidate_facts": 1696106,
+      "conflict_facts": 27391,
+      "input_facts": 1860843,
+      "input_delta_abs": 554,
+      "violations": 1711,
+      "batch_ms": 777.868,
+      "batch_max_rss_mb": 152.0,
+      "fact_generation_ms": 5614.085,
+      "incremental_commit_ms": 1.742,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 13,
+      "commit": "1e9db12c610a",
+      "changed_opam_files": 2,
+      "package_versions": 18871,
+      "package_names": 4485,
+      "dep_clause_facts": 137357,
+      "candidate_facts": 1696269,
+      "conflict_facts": 27391,
+      "input_facts": 1861017,
+      "input_delta_abs": 174,
+      "violations": 1711,
+      "batch_ms": 788.607,
+      "batch_max_rss_mb": 151.859,
+      "fact_generation_ms": 5644.04,
+      "incremental_commit_ms": 0.837,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 14,
+      "commit": "25459587867b",
+      "changed_opam_files": 4,
+      "package_versions": 18875,
+      "package_names": 4485,
+      "dep_clause_facts": 137381,
+      "candidate_facts": 1696668,
+      "conflict_facts": 27393,
+      "input_facts": 1861442,
+      "input_delta_abs": 425,
+      "violations": 1711,
+      "batch_ms": 774.672,
+      "batch_max_rss_mb": 152.094,
+      "fact_generation_ms": 5651.879,
+      "incremental_commit_ms": 1.785,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 15,
+      "commit": "76bd899e94da",
+      "changed_opam_files": 3,
+      "package_versions": 18878,
+      "package_names": 4488,
+      "dep_clause_facts": 137400,
+      "candidate_facts": 1696797,
+      "conflict_facts": 27393,
+      "input_facts": 1861590,
+      "input_delta_abs": 148,
+      "violations": 1711,
+      "batch_ms": 774.307,
+      "batch_max_rss_mb": 152.062,
+      "fact_generation_ms": 5732.918,
+      "incremental_commit_ms": 1.151,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 16,
+      "commit": "f90b1e38d079",
+      "changed_opam_files": 1,
+      "package_versions": 18879,
+      "package_names": 4488,
+      "dep_clause_facts": 137406,
+      "candidate_facts": 1696878,
+      "conflict_facts": 27394,
+      "input_facts": 1861678,
+      "input_delta_abs": 88,
+      "violations": 1711,
+      "batch_ms": 788.123,
+      "batch_max_rss_mb": 151.922,
+      "fact_generation_ms": 5644.194,
+      "incremental_commit_ms": 0.895,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 17,
+      "commit": "3cf2439784d0",
+      "changed_opam_files": 1,
+      "package_versions": 18880,
+      "package_names": 4488,
+      "dep_clause_facts": 137422,
+      "candidate_facts": 1696931,
+      "conflict_facts": 27394,
+      "input_facts": 1861747,
+      "input_delta_abs": 69,
+      "violations": 1711,
+      "batch_ms": 784.775,
+      "batch_max_rss_mb": 151.922,
+      "fact_generation_ms": 5677.706,
+      "incremental_commit_ms": 0.62,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 18,
+      "commit": "ad878f6a589e",
+      "changed_opam_files": 1,
+      "package_versions": 18881,
+      "package_names": 4488,
+      "dep_clause_facts": 137426,
+      "candidate_facts": 1696983,
+      "conflict_facts": 27394,
+      "input_facts": 1861803,
+      "input_delta_abs": 56,
+      "violations": 1711,
+      "batch_ms": 795.503,
+      "batch_max_rss_mb": 151.922,
+      "fact_generation_ms": 5726.823,
+      "incremental_commit_ms": 0.559,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 19,
+      "commit": "acfaa9d47bde",
+      "changed_opam_files": 1,
+      "package_versions": 18882,
+      "package_names": 4489,
+      "dep_clause_facts": 137427,
+      "candidate_facts": 1696990,
+      "conflict_facts": 27394,
+      "input_facts": 1861811,
+      "input_delta_abs": 8,
+      "violations": 1711,
+      "batch_ms": 782.659,
+      "batch_max_rss_mb": 151.922,
+      "fact_generation_ms": 5604.363,
+      "incremental_commit_ms": 0.594,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 20,
+      "commit": "cb8d11035ca0",
+      "changed_opam_files": 1,
+      "package_versions": 18883,
+      "package_names": 4489,
+      "dep_clause_facts": 137431,
+      "candidate_facts": 1697059,
+      "conflict_facts": 27394,
+      "input_facts": 1861884,
+      "input_delta_abs": 73,
+      "violations": 1711,
+      "batch_ms": 791.821,
+      "batch_max_rss_mb": 151.922,
+      "fact_generation_ms": 5663.492,
+      "incremental_commit_ms": 0.721,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 21,
+      "commit": "96458ecf7513",
+      "changed_opam_files": 1,
+      "package_versions": 18884,
+      "package_names": 4490,
+      "dep_clause_facts": 137431,
+      "candidate_facts": 1697059,
+      "conflict_facts": 27394,
+      "input_facts": 1861884,
+      "input_delta_abs": 0,
+      "violations": 1711,
+      "batch_ms": 781.492,
+      "batch_max_rss_mb": 151.922,
+      "fact_generation_ms": 5659.032,
+      "incremental_commit_ms": 0.154,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 22,
+      "commit": "6a81fcd7e7fe",
+      "changed_opam_files": 1,
+      "package_versions": 18885,
+      "package_names": 4491,
+      "dep_clause_facts": 137436,
+      "candidate_facts": 1697097,
+      "conflict_facts": 27394,
+      "input_facts": 1861927,
+      "input_delta_abs": 43,
+      "violations": 1711,
+      "batch_ms": 788.138,
+      "batch_max_rss_mb": 151.922,
+      "fact_generation_ms": 5615.115,
+      "incremental_commit_ms": 0.622,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 23,
+      "commit": "7d5cbdbc1151",
+      "changed_opam_files": 3,
+      "package_versions": 18888,
+      "package_names": 4491,
+      "dep_clause_facts": 137461,
+      "candidate_facts": 1697320,
+      "conflict_facts": 27397,
+      "input_facts": 1862178,
+      "input_delta_abs": 251,
+      "violations": 1711,
+      "batch_ms": 775.753,
+      "batch_max_rss_mb": 151.875,
+      "fact_generation_ms": 5648.306,
+      "incremental_commit_ms": 1.181,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 24,
+      "commit": "9226b95ebeaa",
+      "changed_opam_files": 2,
+      "package_versions": 18888,
+      "package_names": 4491,
+      "dep_clause_facts": 137461,
+      "candidate_facts": 1697334,
+      "conflict_facts": 27397,
+      "input_facts": 1862192,
+      "input_delta_abs": 70,
+      "violations": 1711,
+      "batch_ms": 944.745,
+      "batch_max_rss_mb": 151.812,
+      "fact_generation_ms": 6333.338,
+      "incremental_commit_ms": 1.496,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 25,
+      "commit": "0b65185ca40c",
+      "changed_opam_files": 1,
+      "package_versions": 18889,
+      "package_names": 4491,
+      "dep_clause_facts": 137468,
+      "candidate_facts": 1697439,
+      "conflict_facts": 27441,
+      "input_facts": 1862348,
+      "input_delta_abs": 156,
+      "violations": 1711,
+      "batch_ms": 776.782,
+      "batch_max_rss_mb": 151.891,
+      "fact_generation_ms": 6158.53,
+      "incremental_commit_ms": 1.25,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 26,
+      "commit": "ade76687fbc9",
+      "changed_opam_files": 2,
+      "package_versions": 18891,
+      "package_names": 4493,
+      "dep_clause_facts": 137486,
+      "candidate_facts": 1697570,
+      "conflict_facts": 27441,
+      "input_facts": 1862497,
+      "input_delta_abs": 149,
+      "violations": 1711,
+      "batch_ms": 785.214,
+      "batch_max_rss_mb": 151.969,
+      "fact_generation_ms": 5678.953,
+      "incremental_commit_ms": 0.867,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 27,
+      "commit": "eefeb7b6e506",
+      "changed_opam_files": 2,
+      "package_versions": 18893,
+      "package_names": 4493,
+      "dep_clause_facts": 137494,
+      "candidate_facts": 1697720,
+      "conflict_facts": 27441,
+      "input_facts": 1862655,
+      "input_delta_abs": 158,
+      "violations": 1711,
+      "batch_ms": 783.963,
+      "batch_max_rss_mb": 152.094,
+      "fact_generation_ms": 5719.468,
+      "incremental_commit_ms": 0.986,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 28,
+      "commit": "622e2cd03db6",
+      "changed_opam_files": 3,
+      "package_versions": 18896,
+      "package_names": 4493,
+      "dep_clause_facts": 137519,
+      "candidate_facts": 1697947,
+      "conflict_facts": 27444,
+      "input_facts": 1862910,
+      "input_delta_abs": 255,
+      "violations": 1711,
+      "batch_ms": 785.254,
+      "batch_max_rss_mb": 152.016,
+      "fact_generation_ms": 5617.045,
+      "incremental_commit_ms": 1.371,
+      "violation_delta_abs": 0
+    },
+    {
+      "index": 29,
+      "commit": "9ed793693353",
+      "changed_opam_files": 1,
+      "package_versions": 18897,
+      "package_names": 4493,
+      "dep_clause_facts": 137533,
+      "candidate_facts": 1698042,
+      "conflict_facts": 27444,
+      "input_facts": 1863019,
+      "input_delta_abs": 109,
+      "violations": 1711,
+      "batch_ms": 782.257,
+      "batch_max_rss_mb": 152.094,
+      "fact_generation_ms": 5664.693,
+      "incremental_commit_ms": 0.546,
+      "violation_delta_abs": 0
+    }
+  ],
+  "programs": {
+    "batch": ".decl DepClause(pid: int32, cid: int32)\n.input DepClause(IO=\"file\", filename=\"DepClause.csv\", delimiter=\",\")\n\n.decl Candidate(pid: int32, cid: int32, qid: int32)\n.input Candidate(IO=\"file\", filename=\"Candidate.csv\", delimiter=\",\")\n\n.decl Conflict(pid: int32, qid: int32)\n.input Conflict(IO=\"file\", filename=\"Conflict.csv\", delimiter=\",\")\n\n.decl SatisfiedClause(pid: int32, cid: int32)\nSatisfiedClause(pid, cid) :- DepClause(pid, cid), Candidate(pid, cid, _).\n\n.decl MissingDependency(pid: int32, cid: int32)\nMissingDependency(pid, cid) :- DepClause(pid, cid), !SatisfiedClause(pid, cid).\n\n.decl NonConflictingClause(pid: int32, cid: int32)\nNonConflictingClause(pid, cid) :-\n  Candidate(pid, cid, qid),\n  !Conflict(pid, qid),\n  !Conflict(qid, pid).\n\n.decl SelfBlockedDependency(pid: int32, cid: int32)\nSelfBlockedDependency(pid, cid) :-\n  DepClause(pid, cid),\n  Candidate(pid, cid, _),\n  !NonConflictingClause(pid, cid).\n\n.decl Violation(kind: int32, pid: int32, cid: int32)\nViolation(1, pid, cid) :- MissingDependency(pid, cid).\nViolation(2, pid, cid) :- SelfBlockedDependency(pid, cid).\n.output Violation",
+    "incremental": ".decl DepClause(pid: int32, cid: int32)\n.input DepClause(IO=\"command\", delimiter=\",\")\n\n.decl Candidate(pid: int32, cid: int32, qid: int32)\n.input Candidate(IO=\"command\", delimiter=\",\")\n\n.decl Conflict(pid: int32, qid: int32)\n.input Conflict(IO=\"command\", delimiter=\",\")\n\n.decl SatisfiedClause(pid: int32, cid: int32)\nSatisfiedClause(pid, cid) :- DepClause(pid, cid), Candidate(pid, cid, _).\n\n.decl MissingDependency(pid: int32, cid: int32)\nMissingDependency(pid, cid) :- DepClause(pid, cid), !SatisfiedClause(pid, cid).\n\n.decl NonConflictingClause(pid: int32, cid: int32)\nNonConflictingClause(pid, cid) :-\n  Candidate(pid, cid, qid),\n  !Conflict(pid, qid),\n  !Conflict(qid, pid).\n\n.decl SelfBlockedDependency(pid: int32, cid: int32)\nSelfBlockedDependency(pid, cid) :-\n  DepClause(pid, cid),\n  Candidate(pid, cid, _),\n  !NonConflictingClause(pid, cid).\n\n.decl Violation(kind: int32, pid: int32, cid: int32)\nViolation(1, pid, cid) :- MissingDependency(pid, cid).\nViolation(2, pid, cid) :- SelfBlockedDependency(pid, cid).\n.output Violation"
+  }
+}

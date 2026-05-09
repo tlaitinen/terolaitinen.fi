@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+  <title id="title">FlowLog Incremental Commit Runtime</title>
+  <desc id="desc">Updates after the initial load; largest update is lwt.6.1.2</desc>
+  <style>
+    .bg { fill: #fbfaf8; }
+    .title { font: 700 24px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1f2933; }
+    .subtitle { font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #52616b; }
+    .axis { stroke: #7b8794; stroke-width: 1; }
+    .grid { stroke: #d9e2ec; stroke-width: 1; }
+    .tick { font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #52616b; }
+    .label { font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334e68; }
+    .legend { font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334e68; }
+  </style>
+  <rect class="bg" width="1100" height="560" rx="0" />
+  <text x="74" y="31" class="title">FlowLog Incremental Commit Runtime</text>
+  <text x="74" y="50" class="subtitle">Updates after the initial load; largest update is lwt.6.1.2</text>
+  <line x1="74" y1="58" x2="98" y2="58" stroke="#c2410c" stroke-width="3" /><text x="106" y="62" class="legend">incremental commit ms</text>
+  <line x1="74" y1="484.0" x2="1066" y2="484.0" class="grid" /><text x="62" y="488.0" text-anchor="end" class="tick">0</text><line x1="74" y1="406.0" x2="1066" y2="406.0" class="grid" /><text x="62" y="410.0" text-anchor="end" class="tick">2</text><line x1="74" y1="328.0" x2="1066" y2="328.0" class="grid" /><text x="62" y="332.0" text-anchor="end" class="tick">4</text><line x1="74" y1="250.0" x2="1066" y2="250.0" class="grid" /><text x="62" y="254.0" text-anchor="end" class="tick">6</text><line x1="74" y1="172.0" x2="1066" y2="172.0" class="grid" /><text x="62" y="176.0" text-anchor="end" class="tick">8</text><line x1="74" y1="94.0" x2="1066" y2="94.0" class="grid" /><text x="62" y="98.0" text-anchor="end" class="tick">10</text>
+  <line x1="74" y1="94" x2="74" y2="484" class="axis" />
+  <line x1="74" y1="484" x2="1066" y2="484" class="axis" />
+  <line x1="74.0" y1="484" x2="74.0" y2="490" class="axis" /><text x="74.0" y="508" text-anchor="middle" class="tick">0</text><line x1="215.7" y1="484" x2="215.7" y2="490" class="axis" /><text x="215.7" y="508" text-anchor="middle" class="tick">4</text><line x1="392.9" y1="484" x2="392.9" y2="490" class="axis" /><text x="392.9" y="508" text-anchor="middle" class="tick">9</text><line x1="570.0" y1="484" x2="570.0" y2="490" class="axis" /><text x="570.0" y="508" text-anchor="middle" class="tick">14</text><line x1="747.1" y1="484" x2="747.1" y2="490" class="axis" /><text x="747.1" y="508" text-anchor="middle" class="tick">19</text><line x1="924.3" y1="484" x2="924.3" y2="490" class="axis" /><text x="924.3" y="508" text-anchor="middle" class="tick">24</text><line x1="1066.0" y1="484" x2="1066.0" y2="490" class="axis" /><text x="1066.0" y="508" text-anchor="middle" class="tick">28</text>
+  <polyline points="74.0,370.9 109.4,449.3 144.9,159.2 180.3,437.0 215.7,445.4 251.1,477.8 286.6,455.3 322.0,454.8 357.4,449.8 392.9,455.8 428.3,446.7 463.7,416.1 499.1,451.4 534.6,414.4 570.0,439.1 605.4,449.1 640.9,459.8 676.3,462.2 711.7,460.8 747.1,455.9 782.6,478.0 818.0,459.7 853.4,437.9 888.9,425.7 924.3,435.2 959.7,450.2 995.1,445.5 1030.6,430.5 1066.0,462.7" fill="none" stroke="#c2410c" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" />
+  <circle cx="74.0" cy="370.9" r="2.3" fill="#c2410c" /><circle cx="109.4" cy="449.3" r="2.3" fill="#c2410c" /><circle cx="144.9" cy="159.2" r="2.3" fill="#c2410c" /><circle cx="180.3" cy="437.0" r="2.3" fill="#c2410c" /><circle cx="215.7" cy="445.4" r="2.3" fill="#c2410c" /><circle cx="251.1" cy="477.8" r="2.3" fill="#c2410c" /><circle cx="286.6" cy="455.3" r="2.3" fill="#c2410c" /><circle cx="322.0" cy="454.8" r="2.3" fill="#c2410c" /><circle cx="357.4" cy="449.8" r="2.3" fill="#c2410c" /><circle cx="392.9" cy="455.8" r="2.3" fill="#c2410c" /><circle cx="428.3" cy="446.7" r="2.3" fill="#c2410c" /><circle cx="463.7" cy="416.1" r="2.3" fill="#c2410c" /><circle cx="499.1" cy="451.4" r="2.3" fill="#c2410c" /><circle cx="534.6" cy="414.4" r="2.3" fill="#c2410c" /><circle cx="570.0" cy="439.1" r="2.3" fill="#c2410c" /><circle cx="605.4" cy="449.1" r="2.3" fill="#c2410c" /><circle cx="640.9" cy="459.8" r="2.3" fill="#c2410c" /><circle cx="676.3" cy="462.2" r="2.3" fill="#c2410c" /><circle cx="711.7" cy="460.8" r="2.3" fill="#c2410c" /><circle cx="747.1" cy="455.9" r="2.3" fill="#c2410c" /><circle cx="782.6" cy="478.0" r="2.3" fill="#c2410c" /><circle cx="818.0" cy="459.7" r="2.3" fill="#c2410c" /><circle cx="853.4" cy="437.9" r="2.3" fill="#c2410c" /><circle cx="888.9" cy="425.7" r="2.3" fill="#c2410c" /><circle cx="924.3" cy="435.2" r="2.3" fill="#c2410c" /><circle cx="959.7" cy="450.2" r="2.3" fill="#c2410c" /><circle cx="995.1" cy="445.5" r="2.3" fill="#c2410c" /><circle cx="1030.6" cy="430.5" r="2.3" fill="#c2410c" /><circle cx="1066.0" cy="462.7" r="2.3" fill="#c2410c" />
+  <text x="550.0" y="538" text-anchor="middle" class="label">commit index in replay window</text>
+  <text transform="translate(22,289.0) rotate(-90)" text-anchor="middle" class="label">milliseconds</text>
+</svg>
