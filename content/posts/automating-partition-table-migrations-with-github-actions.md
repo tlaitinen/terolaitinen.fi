@@ -2,6 +2,9 @@
 title: "Automating Partitioned Table Migrations with GitHub Actions"
 slug: "automating-partition-table-migrations-with-github-actions"
 date: "2022-07-26"
+tags:
+  - automation
+  - github-actions
 ---
 
 PostgreSQL supports table partitioning, which splits rows into multiple partitions for improved query performance and easier bulk data transfers. Partitioned tables are useful when data are regularly inserted into a table and only recently added rows are selected in active operation. Older table partitions can be detached, archived, and finally dropped. Changes to database schemas in production systems should be managed with schema migrations, version-controlled, and incrementally applied SQL scripts. Repeated schema migrations should be automated to avoid errors, save engineering time, and ensure they are run. GitHub Actions is a CI/CD automation service that executes jobs according to workflow definitions. This post shows how to use GitHub Actions to regularly open pull requests that manage table partition migrations.

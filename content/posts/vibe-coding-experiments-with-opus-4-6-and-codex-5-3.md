@@ -2,6 +2,10 @@
 title: "Vibe Coding Experiments with Opus 4.6 and Codex 5.3"
 slug: "vibe-coding-experiments-with-opus-4-6-and-codex-5-3.md"
 date: "2026-02-24"
+tags:
+  - ai-agents
+  - deployment
+  - prototyping
 ---
 
 I've used coding agents extensively at work, but until recently I hadn't tried building anything usable from scratch with them outside work. Opus 4.6 and GPT-5.3-Codex have both been impressive, so I thought I'd see how they perform on greenfield projects. At work, code reviews are mandatory. Personal experiments have leaner quality standards.

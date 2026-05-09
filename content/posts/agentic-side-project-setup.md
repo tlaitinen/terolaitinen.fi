@@ -2,6 +2,10 @@
 title: "Agentic Side Project Setup"
 slug: "agentic-side-project-setup.md"
 date: "2026-05-06"
+tags:
+  - ai-agents
+  - automation
+  - github-actions
 ---
 
 ```mermaid

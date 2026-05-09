@@ -2,6 +2,11 @@
 title: "Agent-Assisted Inconsistency Resolution for Monorepos"
 slug: "agent-assisted-inconsistency-resolution-for-monorepos"
 date: "2026-05-07"
+tags:
+  - ai-agents
+  - requirements-engineering
+  - monorepos
+  - automation
 ---
 
 Large repositories need continuous semantic maintenance. A practical inconsistency resolver would treat a Git monorepo as a versioned knowledge base, use deterministic checks where possible, spend bounded agentic and formal-reasoning budget on high-value candidate artifact groups, and open reviewable pull requests that repair drift across code, tests, documentation, schemas, configuration, and mirrored external systems.

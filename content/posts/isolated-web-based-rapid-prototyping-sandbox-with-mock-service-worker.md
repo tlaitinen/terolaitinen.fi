@@ -2,6 +2,10 @@
 title: "Isolated Web-Based Rapid Prototyping Sandbox with Mock Service Worker"
 slug: "isolated-web-based-rapid-prototyping-sandbox-with-mock-service-worker.md"
 date: "2025-07-28"
+tags:
+  - ai-agents
+  - requirements-engineering
+  - prototyping
 ---
 
 

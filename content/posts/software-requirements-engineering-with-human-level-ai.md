@@ -2,6 +2,10 @@
 title: "Software Requirements Engineering with Human-Level AI"
 slug: "software-requirements-engineering-with-human-level-ai"
 date: "2025-06-21"
+tags:
+  - ai-agents
+  - requirements-engineering
+  - product-development
 ---
 
 ```mermaid

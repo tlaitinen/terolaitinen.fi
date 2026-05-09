@@ -1,10 +1,12 @@
 import { markdownToHtml } from '@/lib/markdown';
 import { format } from 'date-fns';
 import MermaidDiagram from './MermaidDiagram';
+import TagList from './TagList';
 
 interface BlogPostProps {
   title: string;
   date: string;
+  tags: string[];
   content: string;
   readingTime: number;
 }
@@ -23,7 +25,7 @@ function renderContentWithMermaid(htmlContent: string) {
   });
 }
 
-export default async function BlogPost({ title, date, content, readingTime }: BlogPostProps) {
+export default async function BlogPost({ title, date, tags, content, readingTime }: BlogPostProps) {
   const htmlContent = await markdownToHtml(content);
   const formattedDate = format(new Date(date), 'MMM d, yyyy').toUpperCase();
 
@@ -42,6 +44,11 @@ export default async function BlogPost({ title, date, content, readingTime }: Bl
       <div className="prose">
         {renderContentWithMermaid(htmlContent)}
       </div>
+      {tags.length > 0 && (
+        <footer className="mt-10 border-t border-gray-200 pt-6 dark:border-gray-700">
+          <TagList tags={tags} />
+        </footer>
+      )}
     </article>
   );
 }

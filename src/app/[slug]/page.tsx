@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: PostPageProps) {
   return {
     title: `${post.title} - Tero's blog`,
     description: post.excerpt || `Blog post: ${post.title}`,
+    keywords: post.tags,
     alternates: {
       canonical: `https://terolaitinen.fi/${slug}`,
     },
@@ -44,6 +45,7 @@ export default async function PostPage({ params }: PostPageProps) {
     <BlogPost
       title={post.title}
       date={post.date}
+      tags={post.tags}
       content={post.content}
       readingTime={post.readingTime}
     />

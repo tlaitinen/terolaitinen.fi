@@ -2,6 +2,9 @@
 title: "Single-Server Deployments with Terraform, Docker Compose, and GitHub Actions"
 slug: "deploying-with-terraform-docker-compose-and-github-actions"
 date: "2023-04-30"
+tags:
+  - deployment
+  - github-actions
 ---
 
 A single cloud server can affordably power a range of services. In many cases, the vertical scalability capabilities of a single host are enough to cover the needs of many business applications for years, if not indefinitely. Deploying on top of plain cloud servers requires more expertise and oversight and has different risks and costs than relying on popular PaaS offerings like Heroku. There are also tools like Dokku that facilitate deploying to a single server with a good developer experience. But let's assume that you don't want to use any of these, but prefer to build your deployment pipeline on top of lower-level building blocks like Terraform, an infrastructure provisioning tool, Docker Compose, a multi-container manager, and GitHub Actions, a CI/CD automation tool. This post shows one way to do that - ok, cheating a little by also relying on Docker Hub, S3, Route53, and Let's Encrypt for convenience, but still keeping recurring hosting costs minimal.

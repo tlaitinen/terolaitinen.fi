@@ -2,6 +2,9 @@
 title: "Injecting Hooks Into React Components"
 slug: "injecting-hooks-to-react-components"
 date: "2022-07-14"
+tags:
+  - react
+  - frontend-architecture
 ---
 
 [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection?ref=terolaitinen.fi) is a design pattern providing dependencies to a function (or class) in call sites rather than importing them directly in the implementation. Using the pattern it is easier to supply different implementations for dependencies depending on the call site (e.g., modular code reuse, tests, and component explorer). A loosely coupled codebase can be more maintainable. [Hooks](https://reactjs.org/docs/hooks-intro.html?ref=terolaitinen.fi) are used for writing stateful [React](https://reactjs.org/?ref=terolaitinen.fi) components without introducing a class. This post explores three ways how to inject hooks to React components instead of importing them:

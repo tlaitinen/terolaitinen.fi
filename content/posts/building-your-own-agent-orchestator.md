@@ -2,6 +2,9 @@
 title: "Building Your Own Agent Orchestrator"
 slug: "building-your-own-agent-orchestrator"
 date: "2026-05-01"
+tags:
+  - ai-agents
+  - automation
 ---
 
 I finally set aside some time to experiment with agent orchestrators. It turns out that building one tuned to your workflow is straightforward. The agent drafts its own orchestration skill, you run it, flag what falls short, and it iterates. The result fits your repositories, build system, and other constraints including budget. You may start from scratch or fork an existing orchestrator.

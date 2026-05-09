@@ -2,6 +2,10 @@
 title: "Incremental Datalog Conflict Detection with OPAM Metadata"
 slug: "incremental-datalog-conflict-detection-with-opam-metadata"
 date: "2026-05-09"
+tags:
+  - requirements-engineering
+  - formal-methods
+  - performance
 ---
 
 Conflict detection for requirements needs a formal substrate that can update after small repository changes without rechecking the whole repository. This post proposes a restricted Datalog model, uses OPAM package metadata as a concrete benchmark, and reports a FlowLog run where incremental commits took 0.89 ms at p50 while batch recomputation took 783.6 ms at p50 over the same 30-commit window.

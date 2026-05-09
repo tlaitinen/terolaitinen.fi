@@ -2,6 +2,9 @@
 title: "React SSR Memory Consumption"
 slug: "react-ssr-memory-consumption"
 date: "2022-07-21"
+tags:
+  - react
+  - performance
 ---
 
 [Server-side rendering](https://web.dev/rendering-on-the-web/?ref=terolaitinen.fi#server-rendering) (SSR) can help improve [core web vitals](https://web.dev/vitals/?ref=terolaitinen.fi#core-web-vitals) and is essential for [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization?ref=terolaitinen.fi). [React](https://reactjs.org/?ref=terolaitinen.fi) and [node.js](https://nodejs.org/?ref=terolaitinen.fi) are often used to server-side render web pages. However, under high concurrency, rendering complex web pages may increase memory consumption and cause the application to crash if memory allocation fails. This post explores the following topics:

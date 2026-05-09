@@ -2,6 +2,9 @@
 title: "Higher-Order Agentic Loops"
 slug: "higher-order-agentic-loops"
 date: "2026-05-08"
+tags:
+  - ai-agents
+  - formal-methods
 ---
 
 An agent loop is usually described as a practical control pattern: execute, observe, validate, revise, repeat. That framing is useful for building systems, but it hides a more basic question. If one agent loop can inspect and steer another agent loop, and another loop can inspect and steer that steering loop, do we get a genuine hierarchy of problem-solving power?

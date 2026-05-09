@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { normalizeTags, normalizeTagSlug, tagToSlug } from './tags';
 
 function calculateReadingTime(content: string): number {
   const wordsPerMinute = 200;
@@ -47,9 +48,30 @@ export interface Post {
   slug: string;
   title: string;
   date: string;
+  tags: string[];
   excerpt?: string;
   content: string;
   readingTime: number;
+}
+
+export interface Tag {
+  label: string;
+  slug: string;
+  count: number;
+}
+
+function parsePostFile(slug: string, fileContents: string): Post {
+  const { data, content } = matter(fileContents);
+
+  return {
+    slug,
+    title: data.title,
+    date: data.date,
+    tags: normalizeTags(data.tags),
+    excerpt: data.excerpt || generateExcerpt(content),
+    content,
+    readingTime: calculateReadingTime(content),
+  };
 }
 
 export function getAllPosts(): Post[] {
@@ -60,16 +82,7 @@ export function getAllPosts(): Post[] {
       const slug = fileName.replace(/\.md$/, '');
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data, content } = matter(fileContents);
-
-      return {
-        slug,
-        title: data.title,
-        date: data.date,
-        excerpt: data.excerpt || generateExcerpt(content),
-        content,
-        readingTime: calculateReadingTime(content),
-      };
+      return parsePostFile(slug, fileContents);
     });
 
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -94,19 +107,48 @@ export function getPostBySlug(slug: string): Post | null {
   try {
     const fullPath = path.join(postsDirectory, `${slug}.md`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data, content } = matter(fileContents);
-
-    return {
-      slug,
-      title: data.title,
-      date: data.date,
-      excerpt: data.excerpt || generateExcerpt(content),
-      content,
-      readingTime: calculateReadingTime(content),
-    };
+    return parsePostFile(slug, fileContents);
   } catch {
     return null;
   }
+}
+
+export function getAllTags(): Tag[] {
+  const tagsBySlug = new Map<string, Tag>();
+
+  for (const post of getAllPosts()) {
+    for (const tag of post.tags) {
+      const slug = tagToSlug(tag);
+      const existing = tagsBySlug.get(slug);
+
+      tagsBySlug.set(slug, {
+        label: existing?.label ?? tag,
+        slug,
+        count: (existing?.count ?? 0) + 1,
+      });
+    }
+  }
+
+  return Array.from(tagsBySlug.values()).sort((a, b) => {
+    if (b.count !== a.count) {
+      return b.count - a.count;
+    }
+
+    return a.label.localeCompare(b.label);
+  });
+}
+
+export function getTagBySlug(slug: string): Tag | null {
+  const normalizedSlug = normalizeTagSlug(slug);
+  return getAllTags().find((tag) => tag.slug === normalizedSlug) ?? null;
+}
+
+export function getPostsByTag(slug: string): Post[] {
+  const normalizedSlug = normalizeTagSlug(slug);
+
+  return getAllPosts().filter((post) =>
+    post.tags.some((tag) => tagToSlug(tag) === normalizedSlug)
+  );
 }
 
 export function getAboutPage() {

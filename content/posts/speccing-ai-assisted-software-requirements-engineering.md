@@ -2,6 +2,10 @@
 title: "Speccing AI-assisted Software Requirements Engineering"
 slug: "speccing-ai-assisted-software-requirements-engineering"
 date: "2025-03-13"
+tags:
+  - ai-agents
+  - requirements-engineering
+  - product-development
 ---
 
 Answering questions on how a product with many software components should work can be challenging. The software may have been written by countless developers over a long period of time, and many may no longer be available for consultation. In principle, maintaining a formal and complete specification separate from the implementation would help in understanding the product’s intended behavior. In practice, such rigor requires an engineering budget and expertise that may be available only when developing safety- or security-critical systems. Additionally, studying a formal specification for a complex system to verify if the implementation conforms to it or to propose a modification can be time-consuming and error-prone.

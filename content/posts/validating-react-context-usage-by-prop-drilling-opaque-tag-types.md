@@ -2,6 +2,11 @@
 title: "Validating React Context Usage by Prop Drilling Opaque Tag Types"
 slug: "validating-react-context-usage-by-prop-drilling-opaque-tag-types"
 date: "2024-07-28"
+tags:
+  - react
+  - typescript
+  - frontend-architecture
+  - type-systems
 ---
 
 [React context](https://react.dev/reference/react/createContext?ref=terolaitinen.fi) allows data to be passed to nested components outside props, reducing the need for prop drilling. Type checker can validate that a component passes correct values in a child component’s props. However, a component’s type signature does not expose the contexts it taps with [useContext](https://react.dev/reference/react/useContext?ref=terolaitinen.fi). Context-using [hooks can be injected in props](https://terolaitinen.fi/injecting-hooks-to-react-components/), making data access explicit and type-checkable. With dependency injection, type signatures in props are complete, allowing alternative implementations in different call sites, such as tests and component explorer configurations. If such customizability is unnecessary, it is enough to pass an opaque tag type that encodes which contexts are available, reducing some boilerplate code compared to dependency injection.
