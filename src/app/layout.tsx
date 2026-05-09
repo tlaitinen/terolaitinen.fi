@@ -52,6 +52,23 @@ export const metadata: Metadata = {
   },
 };
 
+const themeScript = `
+  (function() {
+    function getCookie(name) {
+      var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? decodeURIComponent(match[2]) : null;
+    }
+    var theme = getCookie('theme');
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else if (theme === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -63,6 +80,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://github.com" />
         <link rel="preconnect" href="https://linkedin.com" />
         <link rel="dns-prefetch" href="https://careers.wolt.com" />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className={`${inter.variable} antialiased bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-inter transition-colors`}>
         <a

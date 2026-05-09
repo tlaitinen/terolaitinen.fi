@@ -102,6 +102,7 @@ export default async function PostPage({ params }: PostPageProps) {
         tags={post.tags}
         content={post.content}
         readingTime={post.readingTime}
+        summary={post.summary}
       />
       <RelatedPosts currentSlug={slug} />
     </>

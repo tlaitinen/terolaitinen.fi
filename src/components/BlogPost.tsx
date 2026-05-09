@@ -1,7 +1,9 @@
 import { markdownToHtml } from '@/lib/markdown';
 import { format } from 'date-fns';
+import { extractToc } from '@/lib/toc';
 import MermaidDiagram from './MermaidDiagram';
 import TagList from './TagList';
+import TableOfContents from './TableOfContents';
 
 interface BlogPostProps {
   title: string;
@@ -9,11 +11,10 @@ interface BlogPostProps {
   tags: string[];
   content: string;
   readingTime: number;
+  summary?: string;
 }
 
-function renderContentWithMermaid(htmlContent: string) {
-  const parts = htmlContent.split(/(<div data-mermaid-chart="[^"]*"><\/div>)/);
-  
+function renderParts(parts: string[]) {
   return parts.map((part, index) => {
     const mermaidMatch = part.match(/^<div data-mermaid-chart="([^"]*)">/);
     if (mermaidMatch) {
@@ -25,9 +26,14 @@ function renderContentWithMermaid(htmlContent: string) {
   });
 }
 
-export default async function BlogPost({ title, date, tags, content, readingTime }: BlogPostProps) {
-  const htmlContent = await markdownToHtml(content);
+export default async function BlogPost({ title, date, tags, content, readingTime, summary }: BlogPostProps) {
+  const [htmlContent, summaryHtml] = await Promise.all([
+    markdownToHtml(content),
+    summary ? markdownToHtml(summary) : Promise.resolve(''),
+  ]);
+
   const formattedDate = format(new Date(date), 'MMM d, yyyy').toUpperCase();
+  const tocItems = extractToc(content);
 
   return (
     <article className="max-w-3xl mx-auto px-6 py-8">
@@ -41,8 +47,17 @@ export default async function BlogPost({ title, date, tags, content, readingTime
           {title}
         </h1>
       </header>
+
+      {summaryHtml && (
+        <div className="prose mb-10">
+          {renderParts(summaryHtml.split(/(<div data-mermaid-chart="[^"]*"><\/div>)/))}
+        </div>
+      )}
+
+      {tocItems.length > 0 && <TableOfContents items={tocItems} />}
+
       <div className="prose">
-        {renderContentWithMermaid(htmlContent)}
+        {renderParts(htmlContent.split(/(<div data-mermaid-chart="[^"]*"><\/div>)/))}
       </div>
       {tags.length > 0 && (
         <footer className="mt-10 border-t border-gray-200 pt-6 dark:border-gray-700">

@@ -100,28 +100,26 @@
 }
 
 /* Dark mode code blocks */
-@media (prefers-color-scheme: dark) {
-  .prose code {
-    color: #fbbf24;
-    background-color: rgba(55, 65, 81, 0.8);
-  }
+.dark .prose code {
+  color: #fbbf24;
+  background-color: rgba(55, 65, 81, 0.8);
+}
 
-  .prose pre {
-    background-color: #1f2937;
-    border-color: #374151;
-  }
+.dark .prose pre {
+  background-color: #1f2937;
+  border-color: #374151;
+}
 
-  .prose pre code {
-    color: #e5e7eb;
-    background-color: transparent;
-  }
+.dark .prose pre code {
+  color: #e5e7eb;
+  background-color: transparent;
+}
 
-  .hljs-keyword,
-  .hljs-selector-tag,
-  .hljs-subst {
-    color: #60a5fa !important;
-    font-weight: bold;
-  }
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-subst {
+  color: #60a5fa !important;
+  font-weight: bold;
 }
 
 /* Highlight.js theme for syntax highlighting */
@@ -301,40 +299,38 @@
 }
 
 /* System dark mode support */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: rgb(17 24 39);
-    color: rgb(255 255 255);
-  }
-  
-  header {
-    background-color: rgb(17 24 39);
-    border-color: rgb(75 85 99);
-  }
-  
-  .bg-white {
-    background-color: rgb(17 24 39);
-  }
-  
-  .text-gray-900 {
-    color: rgb(255 255 255);
-  }
-  
-  .text-gray-600 {
-    color: rgb(209 213 219);
-  }
-  
-  .text-gray-700 {
-    color: rgb(209 213 219);
-  }
-  
-  .text-gray-500 {
-    color: rgb(156 163 175);
-  }
-  
-  .border-gray-200 {
-    border-color: rgb(75 85 99);
-  }
+.dark body {
+  background-color: rgb(17 24 39);
+  color: rgb(255 255 255);
+}
+
+.dark header {
+  background-color: rgb(17 24 39);
+  border-color: rgb(75 85 99);
+}
+
+.dark .bg-white {
+  background-color: rgb(17 24 39);
+}
+
+.dark .text-gray-900 {
+  color: rgb(255 255 255);
+}
+
+.dark .text-gray-600 {
+  color: rgb(209 213 219);
+}
+
+.dark .text-gray-700 {
+  color: rgb(209 213 219);
+}
+
+.dark .text-gray-500 {
+  color: rgb(156 163 175);
+}
+
+.dark .border-gray-200 {
+  border-color: rgb(75 85 99);
 }
 
 /* Custom typography utilities to match production exactly */
@@ -355,10 +351,8 @@
   color: #757575;
 }
 
-@media (prefers-color-scheme: dark) {
-  .text-metadata {
-    color: #a3a3a3;
-  }
+.dark .text-metadata {
+  color: #a3a3a3;
 }
 
 /* About page prose styling overrides */
@@ -464,27 +458,25 @@
   margin-bottom: 1.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  .prose {
-    color: rgb(209, 213, 219);
-  }
-  
-  .prose h1,
-  .prose h2,
-  .prose h3,
-  .prose h4 {
-    color: rgb(255, 255, 255);
-  }
-  
-  .prose a {
-    color: #66b3ff;
-  }
-  
-  .prose a:hover {
-    color: #4da6ff;
-  }
-  
-  .prose a:active {
-    color: #3399ff;
-  }
+.dark .prose {
+  color: rgb(209, 213, 219);
+}
+
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4 {
+  color: rgb(255, 255, 255);
+}
+
+.dark .prose a {
+  color: #66b3ff;
+}
+
+.dark .prose a:hover {
+  color: #4da6ff;
+}
+
+.dark .prose a:active {
+  color: #3399ff;
 }

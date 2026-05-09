@@ -6,6 +6,12 @@ tags:
   - ai-agents
   - requirements-engineering
   - prototyping
+summary: >-
+  Rapid prototyping is effective for requirements discovery and alignment,
+  allowing stakeholders with complementary expertise to explore how an aspect of
+  a new product or an improvement to an existing one works in practice.
+  Prototypes can also serve as partial reference implementations, encoding a
+  meaningful subset of requirements in an unambiguous way.
 ---
 
 
@@ -40,8 +46,6 @@ flowchart LR
     style G fill:#e2f0d9,stroke:#548235,stroke-width:2px
     style H fill:#e2f0d9,stroke:#548235,stroke-width:2px
 ```
-
-Rapid prototyping is effective for requirements discovery and alignment, allowing stakeholders with complementary expertise to explore how an aspect of a new product or an improvement to an existing one works in practice. Prototypes can also serve as partial reference implementations, encoding a meaningful subset of requirements in an unambiguous way.
 
 In this article, I explain how to set up a static sandbox environment for “full-stack” prototypes using [Terraform](https://developer.hashicorp.com/terraform), [CloudFront](https://aws.amazon.com/cloudfront/), [S3](https://aws.amazon.com/s3/), and [Mock Service Worker](https://mswjs.io/). After covering the technical setup, I reflect on how coding agents make rapid prototyping more viable in software development.
 

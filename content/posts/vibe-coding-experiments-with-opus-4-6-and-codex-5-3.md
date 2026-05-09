@@ -1,22 +1,34 @@
 ---
-title: "Vibe Coding Experiments with Opus 4.6 and Codex 5.3"
-slug: "vibe-coding-experiments-with-opus-4-6-and-codex-5-3.md"
-date: "2026-02-24"
+title: Vibe Coding Experiments with Opus 4.6 and Codex 5.3
+slug: vibe-coding-experiments-with-opus-4-6-and-codex-5-3.md
+date: '2026-02-24'
 tags:
   - ai-agents
   - deployment
   - prototyping
+summary: >-
+  I've used coding agents extensively at work, but until recently I hadn't tried
+  building anything usable from scratch with them outside work. Opus 4.6 and
+  GPT-5.3-Codex have both been impressive, so I thought I'd see how they perform
+  on greenfield projects. At work, code reviews are mandatory. Personal
+  experiments have leaner quality standards.
+
+
+  This post covers the deployment setup and three vibe-coded apps:
+
+
+  - A GitHub Actions workflow for server initialization and application
+  deployment to the cheapest Hetzner cloud instance.
+
+  - An attempt to turn my earlier post on AI-assisted software requirements
+  engineering into an application.
+
+  - A web app for tracking my boys' virtual piggy bank — weekly allowances and
+  errand rewards.
+
+  - A voice-chat web application and task runner for sharing the vibe-coding
+  setup with non-technical family members.
 ---
-
-I've used coding agents extensively at work, but until recently I hadn't tried building anything usable from scratch with them outside work. Opus 4.6 and GPT-5.3-Codex have both been impressive, so I thought I'd see how they perform on greenfield projects. At work, code reviews are mandatory. Personal experiments have leaner quality standards.
-
-This post covers the deployment setup and three vibe-coded apps:
-
-- A GitHub Actions workflow for server initialization and application deployment to the cheapest Hetzner cloud instance.
-- An attempt to turn my earlier post on AI-assisted software requirements engineering into an application.
-- A web app for tracking my boys' virtual piggy bank — weekly allowances and errand rewards.
-- A voice-chat web application and task runner for sharing the vibe-coding setup with non-technical family members.
-
 ## Shared Multi-Project Rust Binary on Hetzner Cloud
 
 I'm mindful of recurring costs and have a soft spot for efficient resource use, so I wanted a setup where I could deploy many vibe-coded apps without worrying about capacity. Hetzner's shared cost-optimized plan offers incredible value. The CX23 includes 2 vCPUs, 4 GB of RAM, 40 GB of SSD, an IPv4 address, and 20 TB of traffic for €3.49 per month excluding VAT and backups.

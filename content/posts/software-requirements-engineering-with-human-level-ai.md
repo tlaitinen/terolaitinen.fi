@@ -6,6 +6,16 @@ tags:
   - ai-agents
   - requirements-engineering
   - product-development
+summary: >-
+  AI models increasingly cover the how of building software products, reshaping
+  the role of software engineers. The ongoing shift may simply result in yet
+  another abstraction layer while still requiring a “software engineer” to guide
+  the implementation. Alternatively, the responsibilities of product managers
+  and software engineers could gradually converge. In the latter case, a deep
+  understanding of technology is still relevant, but most of the remaining work
+  consists of understanding where software can add value and capturing the
+  requirements with sufficient clarity and detail so that the AI models can
+  derive the implementation from them.
 ---
 
 ```mermaid
@@ -23,8 +33,6 @@ graph LR
     
     classDef default font-size:24px,font-weight:bold,padding:20px
 ```
-
-AI models increasingly cover the how of building software products, reshaping the role of software engineers. The ongoing shift may simply result in yet another abstraction layer while still requiring a “software engineer” to guide the implementation. Alternatively, the responsibilities of product managers and software engineers could gradually converge. In the latter case, a deep understanding of technology is still relevant, but most of the remaining work consists of understanding where software can add value and capturing the requirements with sufficient clarity and detail so that the AI models can derive the implementation from them.
 
 AI providers are rushing to maximize their models’ capabilities. Predicting the rate of progress and what it means for the software industry is challenging. While we wait and see how it all plays out, we can make assumptions and reflect on how things might unfold.
 

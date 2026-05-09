@@ -1,20 +1,33 @@
 ---
-title: "Injecting Hooks Into React Components"
-slug: "injecting-hooks-to-react-components"
-date: "2022-07-14"
+title: Injecting Hooks Into React Components
+slug: injecting-hooks-to-react-components
+date: '2022-07-14'
 tags:
   - react
   - frontend-architecture
+summary: >-
+  Dependency Injection is a design pattern providing dependencies to a function
+  (or class) in call sites rather than importing them directly in the
+  implementation. Using the pattern it is easier to supply different
+  implementations for dependencies depending on the call site (e.g., modular
+  code reuse, tests, and component explorer). A loosely coupled codebase can be
+  more maintainable. Hooks are used for writing stateful React components
+  without introducing a class. This post explores three ways how to inject hooks
+  to React components instead of importing them:
+
+
+  -   passing hooks in props
+
+  -   currying hook parameters (component factories)
+
+  -   [react-facade](https://github.com/garbles/react-facade), passing hook
+  implementations through [Context](https://reactjs.org/docs/context.html)
+
+
+  Update 2023-03-31: Please check out the [improved version of the
+  article](https://careers.wolt.com/en/blog/engineering/injecting-hooks-into-react-components)
+  at Wolt Careers Engineering Blog, which discusses the topic more thoroughly.
 ---
-
-[Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection?ref=terolaitinen.fi) is a design pattern providing dependencies to a function (or class) in call sites rather than importing them directly in the implementation. Using the pattern it is easier to supply different implementations for dependencies depending on the call site (e.g., modular code reuse, tests, and component explorer). A loosely coupled codebase can be more maintainable. [Hooks](https://reactjs.org/docs/hooks-intro.html?ref=terolaitinen.fi) are used for writing stateful [React](https://reactjs.org/?ref=terolaitinen.fi) components without introducing a class. This post explores three ways how to inject hooks to React components instead of importing them:
-
--   passing hooks in props
--   currying hook parameters (component factories)
--   [react-facade](https://github.com/garbles/react-facade), passing hook implementations through [Context](https://reactjs.org/docs/context.html)
-
-Update 2023-03-31: Please check out the [improved version of the article](https://careers.wolt.com/en/blog/engineering/injecting-hooks-into-react-components) at Wolt Careers Engineering Blog, which discusses the topic more thoroughly.
-
 ## Passing Hooks in Props
 
 Instead of importing a hook, it is possible to pass it in props. However, we must be mindful of the rules of hooks and not change the hook calling order. Also, passing hooks in props may be considered unidiomatic by some. If these are not deal breakers, it can be a viable way to inject hook dependencies into components.

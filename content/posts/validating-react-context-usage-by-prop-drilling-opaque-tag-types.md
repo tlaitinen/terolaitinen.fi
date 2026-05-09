@@ -1,16 +1,25 @@
 ---
-title: "Validating React Context Usage by Prop Drilling Opaque Tag Types"
-slug: "validating-react-context-usage-by-prop-drilling-opaque-tag-types"
-date: "2024-07-28"
+title: Validating React Context Usage by Prop Drilling Opaque Tag Types
+slug: validating-react-context-usage-by-prop-drilling-opaque-tag-types
+date: '2024-07-28'
 tags:
   - react
   - typescript
   - frontend-architecture
   - type-systems
+summary: >-
+  React context allows data to be passed to nested components outside props,
+  reducing the need for prop drilling. Type checker can validate that a
+  component passes correct values in a child component’s props. However, a
+  component’s type signature does not expose the contexts it taps with
+  useContext. Context-using hooks can be injected in props, making data access
+  explicit and type-checkable. With dependency injection, type signatures in
+  props are complete, allowing alternative implementations in different call
+  sites, such as tests and component explorer configurations. If such
+  customizability is unnecessary, it is enough to pass an opaque tag type that
+  encodes which contexts are available, reducing some boilerplate code compared
+  to dependency injection.
 ---
-
-[React context](https://react.dev/reference/react/createContext?ref=terolaitinen.fi) allows data to be passed to nested components outside props, reducing the need for prop drilling. Type checker can validate that a component passes correct values in a child component’s props. However, a component’s type signature does not expose the contexts it taps with [useContext](https://react.dev/reference/react/useContext?ref=terolaitinen.fi). Context-using [hooks can be injected in props](https://terolaitinen.fi/injecting-hooks-to-react-components/), making data access explicit and type-checkable. With dependency injection, type signatures in props are complete, allowing alternative implementations in different call sites, such as tests and component explorer configurations. If such customizability is unnecessary, it is enough to pass an opaque tag type that encodes which contexts are available, reducing some boilerplate code compared to dependency injection.
-
 ## Wrapper for Including Tag Type in Context
 
 Exposing a context-specific tag type value only when using a context provider can help ensure that a component has all necessary context providers as ancestors. [Records](https://www.typescriptlang.org/docs/handbook/utility-types.html?ref=terolaitinen.fi#recordkeys-type) with [symbol type](https://www.typescriptlang.org/docs/handbook/symbols.html?ref=terolaitinen.fi) keys are suitable for this purpose.

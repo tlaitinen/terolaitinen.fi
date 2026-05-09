@@ -1,11 +1,14 @@
 ---
-title: "Minimal Physics-Based Multiplayer Unity Game"
-slug: "minimal-physics-based-multiplayer-unity-game"
-date: "2023-07-30"
+title: Minimal Physics-Based Multiplayer Unity Game
+slug: minimal-physics-based-multiplayer-unity-game
+date: '2023-07-30'
+summary: >-
+  Unity is a capable proprietary game development environment and arguably the
+  most sensible choice for many independent game developers. As the first part
+  of a learning journal, this post describes implementing a minimal multiplayer
+  3d game with Unity involving physics. As a disclaimer, I’m a beginner with
+  Unity and C#, so calibrate your expectations accordingly.
 ---
-
-Unity is a capable proprietary game development environment and arguably the most sensible choice for many independent game developers. As the first part of a learning journal, this post describes implementing a minimal multiplayer 3d game with Unity involving physics. As a disclaimer, I’m a beginner with Unity and C#, so calibrate your expectations accordingly.
-
 ## Background
 
 Since a very young age, I’ve always been fascinated by computer games and spent a significant portion of my waking hours playing them. When a friend introduced me to QBasic in elementary school, I was captivated by the possibility of making games myself. QBasic was suitable for simple text-based games, but we quickly discarded QBasic for Turbo Pascal for better performance and later migrated to DJGPP to circumvent Turbo Pascal’s memory limitations.

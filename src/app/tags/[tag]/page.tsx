@@ -62,7 +62,7 @@ export default async function TagPage({ params }: TagPageProps) {
             title={post.title}
             slug={post.slug}
             date={post.date}
-            excerpt={post.excerpt}
+            summary={post.summary}
             readingTime={post.readingTime}
           />
         ))}

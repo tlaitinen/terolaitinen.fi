@@ -1,15 +1,19 @@
 ---
-title: "Incremental Datalog Conflict Detection with OPAM Metadata"
-slug: "incremental-datalog-conflict-detection-with-opam-metadata"
-date: "2026-05-09"
+title: Incremental Datalog Conflict Detection with OPAM Metadata
+slug: incremental-datalog-conflict-detection-with-opam-metadata
+date: '2026-05-09'
 tags:
   - requirements-engineering
   - formal-methods
   - performance
+summary: >-
+  Conflict detection for requirements needs a formal substrate that can update
+  after small repository changes without rechecking the whole repository. This
+  post proposes a restricted Datalog model, uses OPAM package metadata as a
+  concrete benchmark, and reports a FlowLog run where incremental commits took
+  0.89 ms at p50 while batch recomputation took 783.6 ms at p50 over the same
+  30-commit window.
 ---
-
-Conflict detection for requirements needs a formal substrate that can update after small repository changes without rechecking the whole repository. This post proposes a restricted Datalog model, uses OPAM package metadata as a concrete benchmark, and reports a FlowLog run where incremental commits took 0.89 ms at p50 while batch recomputation took 783.6 ms at p50 over the same 30-commit window.
-
 ## From Requirements to a Testable Benchmark
 
 I previously wrote about [AI-assisted software requirements engineering](https://terolaitinen.fi/speccing-ai-assisted-software-requirements-engineering), [requirements repositories built from scattered project artifacts](https://terolaitinen.fi/requirements-engineering-with-cursor-from-google-docs-slack-convos-jira-confluence-and-submodules-into-cross-linked-markdown), and [agent-assisted inconsistency resolution for monorepos](https://terolaitinen.fi/agent-assisted-inconsistency-resolution-for-monorepos). Those posts describe the problem at a high level. This post narrows the question to one testable mechanism: can a restricted formal model be updated incrementally when a versioned knowledge base changes?

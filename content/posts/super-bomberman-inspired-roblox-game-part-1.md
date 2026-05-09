@@ -1,11 +1,12 @@
 ---
-title: "Super Bomberman-Inspired Roblox Game: Part 1"
-slug: "super-bomberman-inspired-roblox-game-part-1"
-date: "2024-01-06"
+title: 'Super Bomberman-Inspired Roblox Game: Part 1'
+slug: super-bomberman-inspired-roblox-game-part-1
+date: '2024-01-06'
+summary: >-
+  This post continues the learning journal on game development, recording the
+  first steps of working on a Super Bomberman-inspired game as I pivoted from
+  Unity to Roblox Studio with zero experience.
 ---
-
-This post continues the learning journal on game development, recording the first steps of working on a [Super Bomberman](https://en.wikipedia.org/wiki/Super_Bomberman?ref=terolaitinen.fi)-inspired game as I pivoted from [Unity](https://unity.com/?ref=terolaitinen.fi) to [Roblox Studio](https://create.roblox.com/?ref=terolaitinen.fi) with zero experience.
-
 ## Background
 
 I [explained](https://terolaitinen.fi/minimal-physics-based-multiplayer-unity-game/#background) why Unity felt like the rational choice for a long-term commitment to game development. Since then, my boys, avid [Roblox](https://www.roblox.com/?ref=terolaitinen.fi) gamers, have preferred Roblox Studio, a platform for creating multiplayer online experiences.

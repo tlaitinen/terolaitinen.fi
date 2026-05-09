@@ -63,6 +63,7 @@ export interface Post {
   date: string;
   tags: string[];
   excerpt?: string;
+  summary?: string;
   content: string;
   readingTime: number;
 }
@@ -81,7 +82,8 @@ function parsePostFile(slug: string, fileContents: string): Post {
     title: data.title,
     date: data.date,
     tags: normalizeTags(data.tags),
-    excerpt: data.excerpt || generateExcerpt(content),
+    excerpt: data.excerpt || generateExcerpt(data.summary ? data.summary + '\n\n' + content : content),
+    summary: data.summary,
     content,
     readingTime: calculateReadingTime(content),
   };

@@ -6,6 +6,16 @@ tags:
   - ai-agents
   - requirements-engineering
   - monorepos
+summary: >-
+  Tracking software requirements and communicating effectively with all
+  stakeholders when information is scattered across multiple systems like Slack,
+  Google Docs, JIRA, Confluence, GitHub, and elsewhere can be challenging. While
+  [I wait for the industry to solve this](https://terolaitinen.fi/speccing-ai-assisted-software-requirements-engineering),
+  I experiment with makeshift solutions. My current workflow uses
+  [Cursor](https://www.cursor.com/) as the central hub. It operates on a
+  requirements-focused GitHub repository that consolidates the relevant
+  software-focused repos as submodules, copies of Slack threads, and Google
+  Docs. I then use MCP to sync the remaining information.
 ---
 
 ```mermaid
@@ -40,8 +50,6 @@ flowchart LR
     classDef artifact fill:#e3f2fd,stroke:#0d47a1,stroke-width:3px
     classDef distribution fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
 ```
-
-Tracking software requirements and communicating effectively with all stakeholders when information is scattered across multiple systems like Slack, Google Docs, JIRA, Confluence, GitHub, and elsewhere can be challenging. While [I wait for the industry to solve this](https://terolaitinen.fi/speccing-ai-assisted-software-requirements-engineering), I experiment with makeshift solutions. My current workflow uses [Cursor](https://www.cursor.com/)  as the central hub. It operates on a requirements-focused GitHub repository that consolidates the relevant software-focused repos as submodules, copies of Slack threads, and Google Docs. I then use MCP to sync the remaining information.
 
 Note: the diagram above is a simplified illustration of how I gather requirements engineering context from multiple sources into Cursor and then sync back to the authoritative knowledge hubs. I want to emphasize that every step of the process combines some automated tooling with deliberate, manual curation to avoid introducing problems into the process.
 

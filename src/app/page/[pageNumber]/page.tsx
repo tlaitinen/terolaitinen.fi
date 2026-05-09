@@ -58,7 +58,7 @@ export default async function PageNumberPage({ params }: PageProps) {
             title={post.title}
             slug={post.slug}
             date={post.date}
-            excerpt={post.excerpt}
+            summary={post.summary}
             readingTime={post.readingTime}
           />
         ))}

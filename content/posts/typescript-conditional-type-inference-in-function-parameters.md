@@ -1,20 +1,28 @@
 ---
-title: "TypeScript Conditional Type Inference in Function Parameters"
-slug: "typescript-conditional-type-inference-in-function-parameters"
-date: "2022-07-19"
+title: TypeScript Conditional Type Inference in Function Parameters
+slug: typescript-conditional-type-inference-in-function-parameters
+date: '2022-07-19'
 tags:
   - typescript
   - type-systems
+summary: >-
+  Conditional Types are type-level conditional expressions of the form:
+
+
+  ```typescript
+
+  SomeType extends OtherType ? TrueType : FalseType;
+
+  ```
+
+
+  TypeScript can [infer
+  types](https://en.wikipedia.org/wiki/Type_inference?ref=terolaitinen.fi) for
+  expressions in many cases, but it seems to be unable to do so for generic
+  functions with type parameters involving conditional types, at least in
+  version 4.7.4. This post illustrates when such type inference could be useful
+  and how to nudge TypeScript to infer types correctly.
 ---
-
-[Conditional Types](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html?ref=terolaitinen.fi) are type-level conditional expressions of the form:
-
-```typescript
-SomeType extends OtherType ? TrueType : FalseType;
-```
-
-TypeScript can [infer types](https://en.wikipedia.org/wiki/Type_inference?ref=terolaitinen.fi) for expressions in many cases, but it seems to be unable to do so for generic functions with type parameters involving conditional types, at least in version 4.7.4. This post illustrates when such type inference could be useful and how to nudge TypeScript to infer types correctly.
-
 ## When Conditional Type Inference Does not Happen
 
 The problem arises when we have a generic function with a type parameter whose type involves a conditional type:

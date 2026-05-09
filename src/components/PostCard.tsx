@@ -1,17 +1,24 @@
-import Link from 'next/link';
-import { format } from 'date-fns';
-import { truncateAtWordBoundary } from '@/lib/posts';
+import Link from "next/link";
+import { format } from "date-fns";
+import { markdownToHtml } from "@/lib/markdown";
 
 interface PostCardProps {
   title: string;
   slug: string;
   date: string;
-  excerpt?: string;
+  summary?: string;
   readingTime: number;
 }
 
-export default function PostCard({ title, slug, date, excerpt, readingTime }: PostCardProps) {
-  const formattedDate = format(new Date(date), 'MMM d, yyyy').toUpperCase();
+export default async function PostCard({
+  title,
+  slug,
+  date,
+  summary,
+  readingTime,
+}: PostCardProps) {
+  const formattedDate = format(new Date(date), "MMM d, yyyy").toUpperCase();
+  const summaryHtml = summary ? await markdownToHtml(summary) : "";
 
   return (
     <article className="pb-6 mb-6">
@@ -21,17 +28,18 @@ export default function PostCard({ title, slug, date, excerpt, readingTime }: Po
         <span>{readingTime} MIN READ</span>
       </div>
       <h2 className="text-3xl mb-4 font-extrabold font-blog tracking-tight">
-        <Link 
-          href={`/${slug}`} 
+        <Link
+          href={`/${slug}`}
           className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 active:text-blue-700 dark:active:text-blue-500 transition-colors duration-200"
         >
           {title}
         </Link>
       </h2>
-      {excerpt && (
-        <p className="text-17 text-gray-700 dark:text-gray-300 font-blog mb-0 leading-normal">
-          {excerpt ? truncateAtWordBoundary(excerpt, 150) : ''}
-        </p>
+      {summaryHtml && (
+        <div
+          className="text-17 text-gray-700 dark:text-gray-300 font-blog mb-0 leading-normal"
+          dangerouslySetInnerHTML={{ __html: summaryHtml }}
+        />
       )}
     </article>
   );

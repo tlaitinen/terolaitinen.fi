@@ -1,20 +1,32 @@
 ---
-title: "React SSR Memory Consumption"
-slug: "react-ssr-memory-consumption"
-date: "2022-07-21"
+title: React SSR Memory Consumption
+slug: react-ssr-memory-consumption
+date: '2022-07-21'
 tags:
   - react
   - performance
+summary: >-
+  Server-side rendering (SSR) can help improve core web vitals and is essential
+  for SEO. React and node.js are often used to server-side render web pages.
+  However, under high concurrency, rendering complex web pages may increase
+  memory consumption and cause the application to crash if memory allocation
+  fails. This post explores the following topics:
+
+
+  -   Measuring node.js memory consumption as increasingly complex web pages are
+  rendered with React.
+
+  -   Measuring node.js memory consumption and throughput when serving HTML
+  pages in an HTTP server.
+
+  -   Limiting node.js concurrency with [haproxy](http://www.haproxy.org/).
+
+
+  Update 2022-11-11: Please check out the article [Optimizing SSR Memory Usage
+  on
+  wolt.com](https://careers.wolt.com/en/blog/engineering/optimizing-ssr-memory-usage-on-wolt-com?ref=terolaitinen.fi),
+  which discusses the topic more thoroughly.
 ---
-
-[Server-side rendering](https://web.dev/rendering-on-the-web/?ref=terolaitinen.fi#server-rendering) (SSR) can help improve [core web vitals](https://web.dev/vitals/?ref=terolaitinen.fi#core-web-vitals) and is essential for [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization?ref=terolaitinen.fi). [React](https://reactjs.org/?ref=terolaitinen.fi) and [node.js](https://nodejs.org/?ref=terolaitinen.fi) are often used to server-side render web pages. However, under high concurrency, rendering complex web pages may increase memory consumption and cause the application to crash if memory allocation fails. This post explores the following topics:
-
--   Measuring node.js memory consumption as increasingly complex web pages are rendered with React.
--   Measuring node.js memory consumption and throughput when serving HTML pages in an HTTP server.
--   Limiting node.js concurrency with [haproxy](http://www.haproxy.org/).
-
-Update 2022-11-11: Please check out the article [Optimizing SSR Memory Usage on wolt.com](https://careers.wolt.com/en/blog/engineering/optimizing-ssr-memory-usage-on-wolt-com?ref=terolaitinen.fi), which discusses the topic more thoroughly.
-
 ## React Memory Consumption in Node.js
 
 Node.js application, which renders web pages using React, needs to hold memory for HTTP request state, request headers and body, React elements and rendering state, page HTML, and buffers for writing to the socket corresponding to an HTTP request. This section explores how memory consumption increases as a function of the size of the React component tree.

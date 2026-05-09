@@ -5,9 +5,14 @@ date: "2026-05-01"
 tags:
   - ai-agents
   - automation
+summary: >-
+  I finally set aside some time to experiment with agent orchestrators. It turns
+  out that building one tuned to your workflow is straightforward. The agent
+  drafts its own orchestration skill, you run it, flag what falls short, and it
+  iterates. The result fits your repositories, build system, and other
+  constraints including budget. You may start from scratch or fork an existing
+  orchestrator.
 ---
-
-I finally set aside some time to experiment with agent orchestrators. It turns out that building one tuned to your workflow is straightforward. The agent drafts its own orchestration skill, you run it, flag what falls short, and it iterates. The result fits your repositories, build system, and other constraints including budget. You may start from scratch or fork an existing orchestrator.
 
 My setup: Opus 4.7 as orchestrator, Codex GPT 5.5 as worker. Opus 4.7 wrote the skill and keeps revising it. Codex seems to have better bang-per-buck on actual implementation. The orchestrator churns less tokens, so its cost does not matter much.
 

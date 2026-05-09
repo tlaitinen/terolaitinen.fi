@@ -6,6 +6,10 @@ tags:
   - ai-agents
   - automation
   - github-actions
+summary: >-
+  This is a work-in-progress side-project setup for me, at most 4 worker hosts,
+  1 public box, and 1 monorepo. The aim is to maximize AI subscription usage
+  and hardware usage while minimizing my oversight.
 ---
 
 ```mermaid

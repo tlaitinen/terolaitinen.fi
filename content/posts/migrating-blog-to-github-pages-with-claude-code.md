@@ -1,13 +1,13 @@
 ---
-title: "Migrating Blog to GitHub Pages with Claude Code Pro"
-slug: "migrating-blog-to-github-pages-with-claude-code"
-date: "2025-06-11"
+title: Migrating Blog to GitHub Pages with Claude Code Pro
+slug: migrating-blog-to-github-pages-with-claude-code
+date: '2025-06-11'
 tags:
   - ai-agents
+summary: >-
+  I migrated this website from self-hosted Ghost to GitHub Pages using Claude
+  Code Pro. The process took a few hours.
 ---
-
-I migrated this website from self-hosted Ghost to GitHub Pages using Claude Code Pro. The process took a few hours.
-
 ## Background
 
 Self-hosting Ghost meant dealing with security updates, server maintenance, and monthly hosting bills. GitHub Pages offers free hosting for public repositories with static sites. No security concerns, no costs.
