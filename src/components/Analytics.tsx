@@ -23,10 +23,8 @@ interface AnalyticsConfig {
 }
 
 const CONFIG: AnalyticsConfig = {
-  provider: 'none',
-  // To enable Cloudflare Web Analytics, set:
-  // provider: 'cloudflare',
-  // cloudflareToken: 'YOUR_TOKEN_HERE',
+  provider: 'cloudflare',
+  cloudflareToken: 'd9521581f0794c7c94a1f7ce86f0c126',
 };
 
 function shouldTrack(): boolean {
