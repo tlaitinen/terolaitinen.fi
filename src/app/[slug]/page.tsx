@@ -27,8 +27,31 @@ export async function generateMetadata({ params }: PostPageProps) {
     title: `${post.title} - Tero's blog`,
     description: post.excerpt || `Blog post: ${post.title}`,
     keywords: post.tags,
+    authors: [{ name: 'Tero Laitinen', url: 'https://terolaitinen.fi/about' }],
     alternates: {
       canonical: `https://terolaitinen.fi/${slug}`,
+      types: {
+        'application/rss+xml': [{ url: 'https://terolaitinen.fi/feed.xml', title: "Tero's blog" }],
+      },
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt || `Blog post: ${post.title}`,
+      url: `https://terolaitinen.fi/${slug}`,
+      type: 'article',
+      publishedTime: post.date,
+      modifiedTime: post.date,
+      authors: ['Tero Laitinen'],
+      tags: post.tags,
+      locale: 'en_US',
+      siteName: "Tero's blog",
+    },
+    twitter: {
+      card: 'summary_large_image',
+      creator: '@terolaitinen',
+      site: '@terolaitinen',
+      title: post.title,
+      description: post.excerpt || `Blog post: ${post.title}`,
     },
   };
 }
@@ -41,13 +64,44 @@ export default async function PostPage({ params }: PostPageProps) {
     notFound();
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt || `Blog post: ${post.title}`,
+    author: {
+      '@type': 'Person',
+      name: 'Tero Laitinen',
+      url: 'https://terolaitinen.fi/about',
+    },
+    datePublished: post.date,
+    dateModified: post.date,
+    url: `https://terolaitinen.fi/${slug}`,
+    keywords: post.tags.join(', '),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://terolaitinen.fi/${slug}`,
+    },
+    publisher: {
+      '@type': 'Person',
+      name: 'Tero Laitinen',
+      url: 'https://terolaitinen.fi',
+    },
+  };
+
   return (
-    <BlogPost
-      title={post.title}
-      date={post.date}
-      tags={post.tags}
-      content={post.content}
-      readingTime={post.readingTime}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BlogPost
+        title={post.title}
+        date={post.date}
+        tags={post.tags}
+        content={post.content}
+        readingTime={post.readingTime}
+      />
+    </>
   );
 }

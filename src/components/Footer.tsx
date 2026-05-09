@@ -1,4 +1,6 @@
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="mt-12 py-8">
       <div className="max-w-3xl mx-auto px-6 text-center">
@@ -20,6 +22,9 @@ export default function Footer() {
             LinkedIn
           </a>
         </div>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          &copy; {currentYear} Tero Laitinen. All rights reserved.
+        </p>
       </div>
     </footer>
   );

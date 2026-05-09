@@ -22,7 +22,7 @@ I wanted to create something simple enough to finish yet fun to play. I sought i
 
 The unbreakable part of the game arena consists of 29 anchored block Parts and four SpawnLocations.
 
-![](/images/2024/01/Screenshot-2024-01-04-at-16.10.22.png)
+![Roblox Studio showing the game arena with anchored block Parts and SpawnLocations](/images/2024/01/Screenshot-2024-01-04-at-16.10.22.png)
 
 To add breakable walls dynamically, ServerStorage contains a textured block Part, "BrickWall," serving as a template object. On startup, the Script "InitBrickWalls" under ServerScriptService fills some empty gaps in the arena with breakable "BrickWall" objects. The Script "InitBrickWalls" requires the ModuleScript "GameArea," which exports some coordinate utilities.
 
@@ -116,19 +116,19 @@ ServerScriptService/InitBrickWalls (Script)
 
 The script leaves the corners empty so players can maneuver and drop bombs without being caught in a blast.
 
-![](/images/2024/01/Screenshot-2024-01-04-at-18.35.22.png)
+![Roblox Studio showing the arena with breakable BrickWall objects placed in empty gaps](/images/2024/01/Screenshot-2024-01-04-at-18.35.22.png)
 
 ## Disabling Jumping
 
 The default controls allow player characters to jump over blocks. Setting StartPlayer.CharacterJumpHeight to zero turns off jumping.  
 
-![](/images/2024/01/Screenshot-2024-01-06-at-17.22.15.png)
+![Roblox Studio properties panel showing StartPlayer.CharacterJumpHeight set to zero](/images/2024/01/Screenshot-2024-01-06-at-17.22.15.png)
 
 ## Pointing Camera from Above
 
 By default, the camera follows the player's character. Such a close-up view is unsuitable for the game.
 
-![](/images/2024/01/Screenshot-2024-01-06-at-14.49.30.png)
+![Roblox Studio showing the default third-person camera following the player character](/images/2024/01/Screenshot-2024-01-06-at-14.49.30.png)
 
 By default, the camera follows the player's character.
 
@@ -152,17 +152,17 @@ StarterPlayer/StarterPlayerScripts/InitCamera (LocalScript)
 
 With the camera placed suitably in a fixed position, all players have the same view over the game arena.
 
-![](/images/2024/01/Screenshot-2024-01-06-at-17.15.14.png)
+![Roblox Studio showing the fixed overhead camera view with all players visible in the arena](/images/2024/01/Screenshot-2024-01-06-at-17.15.14.png)
 
 ## Bomb Fuse Animation
 
 Players can drop bombs with a rudimentary animation, which indicates how quickly they will go off.
 
-![](/images/2024/01/bomb-fuse.gif)
+![Animated GIF showing a bomb fuse counting down with a spark particle effect in Roblox](/images/2024/01/bomb-fuse.gif)
 
 The template Model "Bomb" resides under ServerStorage, consisting of a sphere, two cylinders, a ParticleEmitter for sparks, a PointLight, and a transparent block "BombWall" to prevent characters from entering the square with a bomb. Without "BombWall", a character may sometimes warp to the other side of the bomb or climb on top of it.
 
-![](/images/2024/01/Screenshot-2024-01-06-at-18.11.59.png)
+![Roblox Studio showing the Bomb model components including sphere, cylinders, and PointLight](/images/2024/01/Screenshot-2024-01-06-at-18.11.59.png)
 
 The Script "RandomBrightness" randomly changes the PointLight's brightness contributing to the spark effect.
 
@@ -303,4 +303,4 @@ The "explode" function iterates over a plus-shaped region of squares, stopping a
 
 With that, I'm off to an encouraging start in my Roblox game development journey, being more able to support my boys' projects. There are still many critical features to add to the Bomberman-inspired game, like power-ups, starting battle rounds in a coordinated way, and scoring.
 
-![](/images/2024/01/ezgif.com-optimize.gif)
+![Animated GIF showing an explosion destroying breakable walls in the Roblox Bomberman-inspired game arena](/images/2024/01/ezgif.com-optimize.gif)

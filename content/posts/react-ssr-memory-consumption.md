@@ -76,7 +76,7 @@ The benchmark application is transpiled to a format that node.js can run with th
 
 Initially, I attempted to measure memory usage by hooking node.js' inspector to Chrome DevTools. However, I did not figure out how to measure peak memory usage easily, so I resorted to grepping `VMPeak` in `/proc/${processPid}/status` , which gives the maximum memory usage since the process started. I used the docker image node:18.6.0 to conduct these measures with React 18.2.0. I started the test application in a docker container `docker run -p 3000:3000 -e NODE_ENV=production -itv $(pwd):/tmp node su -c "cd /tmp && node test.js" node`, checked the PID of the process, inspected baseline `VMPeak` and then instructed the benchmark application to render React component trees of increasing depth.
 
-![](/images/2022/07/React-SSR-Memory-Usage.svg)
+![Bar chart showing React SSR memory usage scaling linearly with component tree depth](/images/2022/07/React-SSR-Memory-Usage.svg)
 
 In this coarse measurement, React seems to have used more than one kB of memory per node in the component tree and allocated memory approximately 20 times the size of page HTML. It is not a problem when using synchronous rendering since intermediate objects are garbage-collected after each call to `renderToString`. Streaming SSR may interleave multiple renders, which in principle could result in higher memory usage than rendering each page sequentially as intermediate objects need to be retained longer. Streaming SSR memory usage remains to be investigated in another post.
 
@@ -95,7 +95,7 @@ const server = http.createServer((_req, res) => {
 server.listen(3000);
 ```
 
-![](/images/2022/07/memory-usage-and-throughput-sync-handler.svg)
+![Line chart showing memory usage and throughput with a synchronous HTTP request handler](/images/2022/07/memory-usage-and-throughput-sync-handler.svg)
 
 With a synchronous request handler, the memory consumption increases linearly with the number of concurrent connections, and the throughput remains the same. In this experiment, the HTTP server could handle roughly the same number of requests per second regardless of the number of concurrent HTTP connections. If requests could be handled synchronously, limiting concurrency to one open HTTP connection would optimize memory usage for maximum throughput. However, this experiment, ran against localhost, fails to capture that opening an HTTP connection and transferring request headers over a network incurs latency. Also, handling some HTTP requests may require fetching data from another service or database. Waiting for data fetching to complete before starting to serve another HTTP request would waste CPU cycles. Thus, serving multiple requests in parallel makes sense to make the CPU busier. Data fetching can be simulated for benchmarking purposes by waiting before responding to an HTTP request.
 
@@ -113,7 +113,7 @@ const server = http.createServer((_req, res) =>
 server.listen(3000);
 ```
 
-![](/images/2022/07/memory-usage-and-throughput-async-handler.svg)
+![Line chart showing memory usage and throughput with an asynchronous HTTP request handler](/images/2022/07/memory-usage-and-throughput-async-handler.svg)
 
 In this experiment, the throughput is the lowest when processing HTTP requests sequentially, as the HTTP server spends most of its time waiting. The memory usage increases linearly with the number of concurrent HTTP connections. As the number of simultaneous HTTP connections increases, the throughput asymptotically approaches its theoretical maximum, illustrated earlier with the synchronous request handler. Testing peak memory usage with different numbers of concurrent HTTP connections helps to identify the optimal concurrency value given a memory budget.
 

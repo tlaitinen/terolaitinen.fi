@@ -1,4 +1,4 @@
-import { getAllPosts, getAllTags } from '@/lib/posts';
+import { getAllPosts, getAllTags, getPostsPage } from '@/lib/posts';
 import { MetadataRoute } from 'next';
 
 export const dynamic = 'force-static';
@@ -22,6 +22,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
+  const firstPage = getPostsPage(1, 5);
+  const paginationEntries: MetadataRoute.Sitemap = [];
+  for (let i = 2; i <= firstPage.totalPages; i++) {
+    paginationEntries.push({
+      url: `${baseUrl}/page/${i}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.3,
+    });
+  }
+
   return [
     {
       url: baseUrl,
@@ -43,5 +54,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...postEntries,
     ...tagEntries,
+    ...paginationEntries,
   ];
 }

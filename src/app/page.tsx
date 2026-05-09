@@ -1,12 +1,31 @@
+import { Metadata } from 'next';
 import { getPostsPage } from '@/lib/posts';
 import PostCard from '@/components/PostCard';
 import Pagination from '@/components/Pagination';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Tero's blog",
-  description: "Personal blog by Tero Laitinen.",
+  description: "Personal technical blog by Tero Laitinen. Articles on software engineering, architecture, and technology.",
   alternates: {
     canonical: 'https://terolaitinen.fi',
+    types: {
+      'application/rss+xml': [{ url: 'https://terolaitinen.fi/feed.xml', title: "Tero's blog" }],
+    },
+  },
+  openGraph: {
+    title: "Tero's blog",
+    description: "Personal technical blog by Tero Laitinen. Articles on software engineering, architecture, and technology.",
+    url: 'https://terolaitinen.fi',
+    type: 'website',
+    locale: 'en_US',
+    siteName: "Tero's blog",
+  },
+  twitter: {
+    card: 'summary_large_image',
+    creator: '@terolaitinen',
+    site: '@terolaitinen',
+    title: "Tero's blog",
+    description: "Personal technical blog by Tero Laitinen. Articles on software engineering, architecture, and technology.",
   },
 };
 

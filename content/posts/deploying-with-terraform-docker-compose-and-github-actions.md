@@ -335,7 +335,7 @@ jobs:
 
 The workflow posts the terraform plan output as a PR comment, but does not preserve it for `terraform apply`. Running `terraform apply` later may thus have other effects in principle.
 
-![](/images/2022/12/Screenshot-2022-12-30-at-16.57.54-1.png)
+![GitHub Actions workflow posting terraform plan output as a pull request comment](/images/2022/12/Screenshot-2022-12-30-at-16.57.54-1.png)
 
 If the plan in the comment looks good, you can use the GitHub Actions workflow below that triggers when a new commit is pushed to the main branch to run `terraform apply`.
 
@@ -368,7 +368,7 @@ jobs:
 
 After merging the PR, another workflow run applies changes to the infrastructure.
 
-![](/images/2022/12/Screenshot-2022-12-30-at-17.31.48-1.png)
+![GitHub Actions workflow running terraform apply after merging a pull request](/images/2022/12/Screenshot-2022-12-30-at-17.31.48-1.png)
 
 GitHub Actions running Terraform Apply
 
@@ -613,7 +613,7 @@ jobs:
 
 After pushing a commit to the `main` branch, the workflow packages the TypeScript application in a Docker image and deploys it to the provisioned server.
 
-![](/images/2022/12/Screenshot-2022-12-31-at-10.46.48.png)
+![GitHub Actions workflow building and deploying a Docker image to the provisioned server](/images/2022/12/Screenshot-2022-12-31-at-10.46.48.png)
 
 GitHub Actions building and deploying a Docker image
 
@@ -724,7 +724,7 @@ jobs:
 
 The workflow can also be manually dispatched (see workflow\_dispatch) so that you can configure the reverse proxy and request an SSL certificate immediately after configuring the workflow.
 
-![](/images/2022/12/Screenshot-2022-12-31-at-12.33.31.png)
+![GitHub Actions workflow manually dispatched to configure the reverse proxy and request an SSL certificate](/images/2022/12/Screenshot-2022-12-31-at-12.33.31.png)
 
 GitHub Actions configuring the reverse proxy
 

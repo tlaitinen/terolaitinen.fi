@@ -24,9 +24,12 @@ export async function generateMetadata({ params }: PageProps) {
   
   return {
     title: `Page ${page} - Tero's blog`,
-    description: `Blog posts page ${page}`,
+    description: `Read more technical articles by Tero Laitinen on software engineering, architecture, and technology. Page ${page}.`,
     alternates: {
       canonical: `https://terolaitinen.fi/page/${page}`,
+      types: {
+        'application/rss+xml': [{ url: 'https://terolaitinen.fi/feed.xml', title: "Tero's blog" }],
+      },
     },
   };
 }

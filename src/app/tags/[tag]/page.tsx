@@ -24,9 +24,12 @@ export async function generateMetadata({ params }: TagPageProps) {
 
   return {
     title: `${tagData.label} - Tero's blog`,
-    description: `Posts tagged ${tagData.label}.`,
+    description: `Explore blog posts about ${tagData.label}. Technical articles, tutorials, and insights by Tero Laitinen on ${tagData.label} and related topics.`,
     alternates: {
       canonical: `https://terolaitinen.fi/tags/${tagData.slug}`,
+      types: {
+        'application/rss+xml': [{ url: 'https://terolaitinen.fi/feed.xml', title: "Tero's blog" }],
+      },
     },
   };
 }

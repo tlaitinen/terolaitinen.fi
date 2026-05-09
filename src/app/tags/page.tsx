@@ -1,11 +1,30 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { getAllTags } from '@/lib/posts';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Tags - Tero's blog",
-  description: "Browse Tero Laitinen's blog posts by tag.",
+  description: "Browse Tero Laitinen's blog posts by topic. Explore articles on software engineering, architecture, and technology.",
   alternates: {
     canonical: 'https://terolaitinen.fi/tags',
+    types: {
+      'application/rss+xml': [{ url: 'https://terolaitinen.fi/feed.xml', title: "Tero's blog" }],
+    },
+  },
+  openGraph: {
+    title: "Tags - Tero's blog",
+    description: "Browse Tero Laitinen's blog posts by topic.",
+    url: 'https://terolaitinen.fi/tags',
+    type: 'website',
+    locale: 'en_US',
+    siteName: "Tero's blog",
+  },
+  twitter: {
+    card: 'summary',
+    creator: '@terolaitinen',
+    site: '@terolaitinen',
+    title: "Tags - Tero's blog",
+    description: "Browse Tero Laitinen's blog posts by topic.",
   },
 };
 
