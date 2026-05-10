@@ -61,13 +61,17 @@ const themeScript = `
     var theme = getCookie('theme');
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
+      document.documentElement.style.colorScheme = 'dark';
     } else if (theme === 'light') {
       document.documentElement.classList.remove('dark');
+      document.documentElement.style.colorScheme = 'light';
     } else {
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.classList.add('dark');
+        document.documentElement.style.colorScheme = 'dark';
       } else {
         document.documentElement.classList.remove('dark');
+        document.documentElement.style.colorScheme = 'light';
       }
     }
   })();
@@ -81,6 +85,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="color-scheme" content="light dark" />
         <link rel="preconnect" href="https://github.com" />
         <link rel="preconnect" href="https://linkedin.com" />
         <link rel="dns-prefetch" href="https://careers.wolt.com" />

@@ -24,8 +24,10 @@ function applyTheme(theme: Theme) {
   const isDark = theme === 'dark' || (theme === 'auto' && getSystemPreference());
   if (isDark) {
     document.documentElement.classList.add(DARK_CLASS);
+    document.documentElement.style.colorScheme = 'dark';
   } else {
     document.documentElement.classList.remove(DARK_CLASS);
+    document.documentElement.style.colorScheme = 'light';
   }
 }
 

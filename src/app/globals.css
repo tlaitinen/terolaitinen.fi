@@ -2,6 +2,7 @@
 
 /* CSS Custom Properties for theming */
 :root {
+  color-scheme: light;
   --color-blog-primary: 25 39 52; /* #192734 */
   --color-blog-secondary: 23 37 84; /* rgba(23, 37, 84, 0.8) */
   --color-blog-muted: 23 37 84; /* rgba(23, 37, 84, 0.5) */
@@ -13,6 +14,7 @@
 }
 
 .dark {
+  color-scheme: dark;
   --color-blog-primary: 255 255 255; /* #ffffff */
   --color-blog-secondary: 255 255 255; /* rgba(255, 255, 255, 0.8) */
   --color-blog-muted: 255 255 255; /* rgba(255, 255, 255, 0.5) */
