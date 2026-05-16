@@ -19,6 +19,8 @@ summary: >-
 
 ![Estimation loop](/images/2026/05/estimation_loop.svg)
 
+[NotebookLM Explainer Video in YouTube](https://www.youtube.com/watch?v=XzZrqo7he5Q)
+
 ## The Question Estimation Answers
 
 Software project estimation should answer a practical question: how much work remains before a defined completion state is reached?
