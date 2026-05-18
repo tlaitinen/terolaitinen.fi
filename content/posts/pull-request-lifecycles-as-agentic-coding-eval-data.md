@@ -16,41 +16,7 @@ summary: >-
   success and value-per-token.
 ---
 
-```mermaid
-%%{init: {'theme':'base', 'themeVariables': { 'lineColor': '#475569', 'fontSize': '18px'}}}%%
-flowchart LR
-    P["PR prompt<br/>scope and model metadata"] --> O["Opened PR<br/>diff, gates, agentic reviews"]
-    O --> H["Human review<br/>comments and revisions"]
-    H --> M["Merged state<br/>accepted outcome"]
-
-    M --> A["Lifecycle analysis<br/>accepted deltas, scope drift, reviewer errors"]
-    A --> I{"Improvement<br/>candidate"}
-    I --> G["Guidance surface PR<br/>docs, rubrics, templates"]
-    I --> Q["Quality gate PR<br/>checks, reviewers, policies"]
-
-    G --> R["Retry clarified task"]
-    Q --> R
-    R --> D["Semantic delta<br/>from accepted outcome"]
-    D --> E["Metrics<br/>one-shot success, value-per-token, reviewer FP/FN"]
-    E -. "ROI of improvement loop" .-> A
-    E -. "future prompts and model configs" .-> P
-
-    classDef source fill:#1d4ed8,stroke:#1e3a8a,stroke-width:2px,color:#ffffff
-    classDef review fill:#92400e,stroke:#78350f,stroke-width:2px,color:#ffffff
-    classDef accepted fill:#166534,stroke:#14532d,stroke-width:2px,color:#ffffff
-    classDef analysis fill:#6d28d9,stroke:#581c87,stroke-width:2px,color:#ffffff
-    classDef improvement fill:#0f766e,stroke:#134e4a,stroke-width:2px,color:#ffffff
-    classDef retry fill:#334155,stroke:#0f172a,stroke-width:2px,color:#ffffff
-    classDef metrics fill:#be123c,stroke:#881337,stroke-width:2px,color:#ffffff
-
-    class P,O source
-    class H review
-    class M accepted
-    class A,I analysis
-    class G,Q improvement
-    class R,D retry
-    class E metrics
-```
+![Pull rqeuest lifecycle loop](/images/2026/05/pr-lifecycle-loop.svg)
 
 Pull request review is where agentic coding systems encounter ambiguity and accumulated inconsistency in an existing software organization. The task prompt may be incomplete, but the repository may also contain outdated documentation, conflicting requirements, redundant implementations, and code that no longer matches the current guidelines. The review discussion contains product intent, local engineering preferences, hidden conventions, quality-gate gaps, and corrections to assumptions that were not written down before the agent started working.
 
