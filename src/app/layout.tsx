@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
+import { SITE_ORIGIN, siteFileUrl, siteUrl } from "@/lib/site";
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -19,10 +20,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://terolaitinen.fi'),
+  metadataBase: new URL(SITE_ORIGIN),
   title: "Tero's blog",
   description: "Personal technical blog by Tero Laitinen. Articles on software engineering, architecture, and technology.",
-  authors: [{ name: 'Tero Laitinen', url: 'https://terolaitinen.fi/about' }],
+  authors: [{ name: 'Tero Laitinen', url: siteUrl('/about') }],
   keywords: ['Tero Laitinen', 'software engineering', 'blog'],
   icons: {
     icon: '/favicon.png',
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://terolaitinen.fi',
+    url: siteUrl('/'),
     siteName: "Tero's blog",
     title: "Tero's blog",
     description: "Personal technical blog by Tero Laitinen. Articles on software engineering, architecture, and technology.",
@@ -45,9 +46,9 @@ export const metadata: Metadata = {
     description: "Personal technical blog by Tero Laitinen. Articles on software engineering, architecture, and technology.",
   },
   alternates: {
-    canonical: 'https://terolaitinen.fi',
+    canonical: siteUrl('/'),
     types: {
-      'application/rss+xml': [{ url: 'https://terolaitinen.fi/feed.xml', title: "Tero's blog" }],
+      'application/rss+xml': [{ url: siteFileUrl('/feed.xml'), title: "Tero's blog" }],
     },
   },
 };

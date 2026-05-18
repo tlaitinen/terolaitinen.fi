@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { getPostsPage } from '@/lib/posts';
+import { siteFileUrl, siteUrl } from '@/lib/site';
 import PostCard from '@/components/PostCard';
 import Pagination from '@/components/Pagination';
 
@@ -7,15 +8,15 @@ export const metadata: Metadata = {
   title: "Tero's blog",
   description: "Personal technical blog by Tero Laitinen. Articles on software engineering, architecture, and technology.",
   alternates: {
-    canonical: 'https://terolaitinen.fi',
+    canonical: siteUrl('/'),
     types: {
-      'application/rss+xml': [{ url: 'https://terolaitinen.fi/feed.xml', title: "Tero's blog" }],
+      'application/rss+xml': [{ url: siteFileUrl('/feed.xml'), title: "Tero's blog" }],
     },
   },
   openGraph: {
     title: "Tero's blog",
     description: "Personal technical blog by Tero Laitinen. Articles on software engineering, architecture, and technology.",
-    url: 'https://terolaitinen.fi',
+    url: siteUrl('/'),
     type: 'website',
     locale: 'en_US',
     siteName: "Tero's blog",

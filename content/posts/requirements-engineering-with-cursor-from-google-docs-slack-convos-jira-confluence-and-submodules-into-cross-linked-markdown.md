@@ -10,7 +10,7 @@ summary: >-
   Tracking software requirements and communicating effectively with all
   stakeholders when information is scattered across multiple systems like Slack,
   Google Docs, JIRA, Confluence, GitHub, and elsewhere can be challenging. While
-  [I wait for the industry to solve this](https://terolaitinen.fi/speccing-ai-assisted-software-requirements-engineering),
+  [I wait for the industry to solve this](https://terolaitinen.fi/speccing-ai-assisted-software-requirements-engineering/),
   I experiment with makeshift solutions. My current workflow uses
   [Cursor](https://www.cursor.com/) as the central hub. It operates on a
   requirements-focused GitHub repository that consolidates the relevant

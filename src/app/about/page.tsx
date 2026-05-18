@@ -1,20 +1,21 @@
 import { Metadata } from 'next';
 import { markdownToHtml } from '@/lib/markdown';
 import { getAboutPage } from '@/lib/posts';
+import { siteFileUrl, siteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'About me - Tero\'s blog',
   description: 'About Tero Laitinen - Staff Engineer at Wolt, technical blogger, and former researcher. Writing about software engineering, architecture, and technology.',
   alternates: {
-    canonical: 'https://terolaitinen.fi/about',
+    canonical: siteUrl('/about'),
     types: {
-      'application/rss+xml': [{ url: 'https://terolaitinen.fi/feed.xml', title: "Tero's blog" }],
+      'application/rss+xml': [{ url: siteFileUrl('/feed.xml'), title: "Tero's blog" }],
     },
   },
   openGraph: {
     title: 'About me - Tero\'s blog',
     description: 'About Tero Laitinen - Staff Engineer at Wolt, technical blogger, and former researcher.',
-    url: 'https://terolaitinen.fi/about',
+    url: siteUrl('/about'),
     type: 'profile',
     locale: 'en_US',
     siteName: "Tero's blog",
@@ -48,7 +49,7 @@ export default async function AboutPage() {
     mainEntity: {
       '@type': 'Person',
       name: 'Tero Laitinen',
-      url: 'https://terolaitinen.fi',
+      url: siteUrl('/'),
       sameAs: [
         'https://github.com/terolaitinen',
         'https://www.linkedin.com/in/tero-laitinen-b6918525/',

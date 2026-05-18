@@ -101,7 +101,7 @@ function checkFile(filePath, pagePath) {
       resolved = '/' + resolved;
     }
 
-    // Remove trailing slash for comparison (matching our trailingSlash: false setup)
+    // Remove trailing slash for comparison (matching our trailingSlash: true setup)
     const normalized = resolved.replace(/\/$/, '') || '/';
 
     if (!validPaths.has(normalized) && !validPaths.has(resolved)) {

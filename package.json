@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "check-links": "node scripts/check-links.js"
+    "check-canonical": "node scripts/check-canonical-urls.js",
+    "check-links": "node scripts/check-links.js",
+    "check-export": "npm run check-links && npm run check-canonical"
   },
   "dependencies": {
     "@next/font": "^14.2.15",

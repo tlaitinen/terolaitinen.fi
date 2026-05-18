@@ -29,7 +29,7 @@ export default function RelatedPosts({ currentSlug }: RelatedPostsProps) {
               </div>
               <h3 className="text-xl font-bold font-blog tracking-tight">
                 <Link
-                  href={`/${post.slug}`}
+                  href={`/${post.slug}/`}
                   className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 active:text-blue-700 dark:active:text-blue-500 transition-colors duration-200"
                 >
                   {post.title}

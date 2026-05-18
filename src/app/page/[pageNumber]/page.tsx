@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getPostsPage } from '@/lib/posts';
+import { siteFileUrl, siteUrl } from '@/lib/site';
 import PostCard from '@/components/PostCard';
 import Pagination from '@/components/Pagination';
 
@@ -26,9 +27,9 @@ export async function generateMetadata({ params }: PageProps) {
     title: `Page ${page} - Tero's blog`,
     description: `Read more technical articles by Tero Laitinen on software engineering, architecture, and technology. Page ${page}.`,
     alternates: {
-      canonical: `https://terolaitinen.fi/page/${page}`,
+      canonical: siteUrl(`/page/${page}`),
       types: {
-        'application/rss+xml': [{ url: 'https://terolaitinen.fi/feed.xml', title: "Tero's blog" }],
+        'application/rss+xml': [{ url: siteFileUrl('/feed.xml'), title: "Tero's blog" }],
       },
     },
   };

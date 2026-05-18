@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getAllTags, getPostsByTag, getTagBySlug } from '@/lib/posts';
+import { siteFileUrl, siteUrl } from '@/lib/site';
 import PostCard from '@/components/PostCard';
 
 interface TagPageProps {
@@ -26,9 +27,9 @@ export async function generateMetadata({ params }: TagPageProps) {
     title: `${tagData.label} - Tero's blog`,
     description: `Explore blog posts about ${tagData.label}. Technical articles, tutorials, and insights by Tero Laitinen on ${tagData.label} and related topics.`,
     alternates: {
-      canonical: `https://terolaitinen.fi/tags/${tagData.slug}`,
+      canonical: siteUrl(`/tags/${tagData.slug}`),
       types: {
-        'application/rss+xml': [{ url: 'https://terolaitinen.fi/feed.xml', title: "Tero's blog" }],
+        'application/rss+xml': [{ url: siteFileUrl('/feed.xml'), title: "Tero's blog" }],
       },
     },
   };

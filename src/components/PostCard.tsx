@@ -29,7 +29,7 @@ export default async function PostCard({
       </div>
       <h2 className="text-3xl mb-4 font-extrabold font-blog tracking-tight">
         <Link
-          href={`/${slug}`}
+          href={`/${slug}/`}
           className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 active:text-blue-700 dark:active:text-blue-500 transition-colors duration-200"
         >
           {title}

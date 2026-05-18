@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getAllPosts } from '@/lib/posts';
+import { siteFileUrl, siteUrl } from '@/lib/site';
 import BlogPost from '@/components/BlogPost';
 import RelatedPosts from '@/components/RelatedPosts';
 
@@ -28,17 +29,17 @@ export async function generateMetadata({ params }: PostPageProps) {
     title: `${post.title} - Tero's blog`,
     description: post.excerpt || `Blog post: ${post.title}`,
     keywords: post.tags,
-    authors: [{ name: 'Tero Laitinen', url: 'https://terolaitinen.fi/about' }],
+    authors: [{ name: 'Tero Laitinen', url: siteUrl('/about') }],
     alternates: {
-      canonical: `https://terolaitinen.fi/${slug}`,
+      canonical: siteUrl(slug),
       types: {
-        'application/rss+xml': [{ url: 'https://terolaitinen.fi/feed.xml', title: "Tero's blog" }],
+        'application/rss+xml': [{ url: siteFileUrl('/feed.xml'), title: "Tero's blog" }],
       },
     },
     openGraph: {
       title: post.title,
       description: post.excerpt || `Blog post: ${post.title}`,
-      url: `https://terolaitinen.fi/${slug}`,
+      url: siteUrl(slug),
       type: 'article',
       publishedTime: post.date,
       modifiedTime: post.date,
@@ -73,20 +74,20 @@ export default async function PostPage({ params }: PostPageProps) {
     author: {
       '@type': 'Person',
       name: 'Tero Laitinen',
-      url: 'https://terolaitinen.fi/about',
+      url: siteUrl('/about'),
     },
     datePublished: post.date,
     dateModified: post.date,
-    url: `https://terolaitinen.fi/${slug}`,
+    url: siteUrl(slug),
     keywords: post.tags.join(', '),
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://terolaitinen.fi/${slug}`,
+      '@id': siteUrl(slug),
     },
     publisher: {
       '@type': 'Person',
       name: 'Tero Laitinen',
-      url: 'https://terolaitinen.fi',
+      url: siteUrl('/'),
     },
   };
 
