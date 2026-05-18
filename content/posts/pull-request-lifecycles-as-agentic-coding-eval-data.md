@@ -24,6 +24,8 @@ Human reviewers may notice that a comment should become durable guidance, or tha
 
 That does not make the signal unavailable. It means the signal is contextual, scattered, and not immediately actionable. The useful system is one that mines pull request lifecycles after merge and turns repeated correction patterns into reviewable improvement PRs.
 
+[NotebookLM Explainer Video in YouTube](https://youtu.be/R83CBdabFDc?si=oY-efEYciKftRa9b)
+
 ## PR Lifecycle as the Eval Case
 
 The unit of analysis is not an individual review comment. A comment is only a candidate signal.
