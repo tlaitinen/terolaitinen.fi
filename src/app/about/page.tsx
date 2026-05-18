@@ -51,7 +51,7 @@ export default async function AboutPage() {
       url: 'https://terolaitinen.fi',
       sameAs: [
         'https://github.com/terolaitinen',
-        'https://linkedin.com/in/terolaitinen',
+        'https://www.linkedin.com/in/tero-laitinen-b6918525/',
       ],
       jobTitle: 'Staff Engineer',
       worksFor: {
