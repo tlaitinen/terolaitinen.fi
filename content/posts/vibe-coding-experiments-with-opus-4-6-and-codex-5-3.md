@@ -1,6 +1,6 @@
 ---
 title: Vibe Coding Experiments with Opus 4.6 and Codex 5.3
-slug: vibe-coding-experiments-with-opus-4-6-and-codex-5-3.md
+slug: vibe-coding-experiments-with-opus-4-6-and-codex-5-3
 date: '2026-02-24'
 tags:
   - ai-agents

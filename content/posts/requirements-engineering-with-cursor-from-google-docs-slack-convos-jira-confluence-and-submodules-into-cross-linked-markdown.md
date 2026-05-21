@@ -1,6 +1,6 @@
 ---
 title: "Cursor-Assisted Requirements Engineering: Unifying Google Docs, Slack, JIRA, Confluence and Submodules Into Cross-Linked Markdown"
-slug: "cursor-assisted-requirements-engineering-unifying-google-docs-slack-jira-confluence-and-submodules-into-cross-linked-markdown"
+slug: "requirements-engineering-with-cursor-from-google-docs-slack-convos-jira-confluence-and-submodules-into-cross-linked-markdown"
 date: "2025-07-06"
 tags:
   - ai-agents
