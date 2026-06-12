@@ -4,8 +4,8 @@ import { getAboutPage } from '@/lib/posts';
 import { siteFileUrl, siteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'About me - Tero\'s blog',
-  description: 'About Tero Laitinen - Staff Engineer at Wolt, technical blogger, and former researcher. Writing about software engineering, architecture, and technology.',
+  title: 'Ab-ut me - Tero\'s blog',
+  description: 'About Tero Laitinen - Staff Engineer at Wolt, technical blogger. Writing about software engineering, architecture, and technology.',
   alternates: {
     canonical: siteUrl('/about'),
     types: {
@@ -14,18 +14,11 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'About me - Tero\'s blog',
-    description: 'About Tero Laitinen - Staff Engineer at Wolt, technical blogger, and former researcher.',
+    description: 'About Tero Laitinen - Staff Engineer at Wolt, technical blogger.',
     url: siteUrl('/about'),
     type: 'profile',
     locale: 'en_US',
     siteName: "Tero's blog",
-  },
-  twitter: {
-    card: 'summary',
-    creator: '@terolaitinen',
-    site: '@terolaitinen',
-    title: 'About me - Tero\'s blog',
-    description: 'About Tero Laitinen - Staff Engineer at Wolt, technical blogger, and former researcher.',
   },
 };
 
@@ -51,7 +44,7 @@ export default async function AboutPage() {
       name: 'Tero Laitinen',
       url: siteUrl('/'),
       sameAs: [
-        'https://github.com/terolaitinen',
+        'https://github.com/tlaitinen',
         'https://www.linkedin.com/in/tero-laitinen-b6918525/',
       ],
       jobTitle: 'Staff Engineer',

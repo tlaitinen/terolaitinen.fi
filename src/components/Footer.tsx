@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-3xl mx-auto px-6 text-center">
         <div className="flex items-center justify-center space-x-6 mb-6">
           <a 
-            href="https://github.com/terolaitinen" 
+            href="https://github.com/tlaitinen" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 active:text-blue-700 dark:active:text-blue-500 transition-colors duration-200"
