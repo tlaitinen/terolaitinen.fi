@@ -74,6 +74,21 @@
   color: rgb(var(--color-blog-primary));
 }
 
+.prose .katex {
+  color: rgb(var(--color-blog-primary));
+  font-size: 1.02em;
+}
+
+.prose .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+
+.prose .katex-display > .katex {
+  white-space: nowrap;
+}
+
 .prose .measurement-table {
   width: 100%;
   margin: 1.5rem 0;

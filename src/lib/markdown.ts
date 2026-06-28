@@ -1,6 +1,8 @@
 import { remark } from 'remark';
+import remarkMath from 'remark-math';
 import remarkRehype from 'remark-rehype';
 import rehypeHighlight from 'rehype-highlight';
+import rehypeKatex from 'rehype-katex';
 import rehypeStringify from 'rehype-stringify';
 import rehypeSlug from 'rehype-slug';
 
@@ -15,7 +17,9 @@ export async function markdownToHtml(markdown: string): Promise<string> {
   );
 
   const result = await remark()
+    .use(remarkMath)
     .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeKatex, { output: 'html' })
     .use(rehypeHighlight)
     .use(rehypeSlug)
     .use(rehypeStringify, { allowDangerousHtml: true })

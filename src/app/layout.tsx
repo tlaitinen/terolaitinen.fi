@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "katex/dist/katex.min.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
