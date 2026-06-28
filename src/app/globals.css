@@ -116,6 +116,52 @@
   white-space: nowrap;
 }
 
+.prose table:not(.measurement-table) {
+  width: 100%;
+  margin: 1.5rem 0 2rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.prose table:not(.measurement-table) th,
+.prose table:not(.measurement-table) td {
+  padding: 0.55rem 0.65rem;
+  border-bottom: 1px solid rgb(var(--color-blog-border));
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.prose table:not(.measurement-table) th {
+  color: rgb(var(--color-blog-primary));
+  font-weight: 700;
+}
+
+.prose table:not(.measurement-table) th:first-child,
+.prose table:not(.measurement-table) td:first-child {
+  width: 8.5rem;
+  color: rgb(var(--color-blog-primary));
+  font-weight: 650;
+}
+
+@media (max-width: 640px) {
+  .prose table:not(.measurement-table) {
+    font-size: 0.9rem;
+  }
+
+  .prose table:not(.measurement-table) th,
+  .prose table:not(.measurement-table) td {
+    padding: 0.5rem;
+  }
+
+  .prose table:not(.measurement-table) th:first-child,
+  .prose table:not(.measurement-table) td:first-child {
+    width: 6.5rem;
+  }
+}
+
 /* Dark mode code blocks */
 .dark .prose code {
   color: #fbbf24;

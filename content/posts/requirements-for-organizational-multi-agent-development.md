@@ -51,8 +51,6 @@ The second metric needs a correctness counterweight. A system that merely trains
 
 I have not used such a system. The bottlenecks may turn out differently in practice. Still, the shape seems useful to describe: a project-management-integrated multi-agent dispatcher whose core job is to coordinate parallel agentic work, preserve complete operational traces, manage budgets, and present reviewable artifacts to humans with enough validation evidence that additional validation rounds become rare.
 
-[NotebookLM Explainer Video in YouTube](https://youtu.be/GcEFVfxUgO0)
-
 ## Project-Management Integration
 
 Agentic workflows should integrate into an organization's existing project-management system rather than replace it. The methodology can fit many systems: GitHub Issues, Linear, JIRA, Azure DevOps, or a custom internal platform. The important property is that agentic work is represented in the same graph where roadmap goals, requirements, milestones, ownership, prioritization, and delivery state already live.
